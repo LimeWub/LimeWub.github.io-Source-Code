@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- <html itemtype="http://schema.org/WebPage" itemscope="" manifest="/manifest.appcache"> -->
+<html itemtype="http://schema.org/WebPage" itemscope="" lang="{{ default.language }}">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="max-age=31622400,public">
+	<!-- Prefetch -->
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="{{ default.prefetch }}">
+	<!-- Preload -->
+	<link rel="preload" href="{{ script }}" as="script">
+	<!-- Indexing -->
+	{{!--
+	<meta name="google">
+	<meta name="googlebot">
+	<meta name="robots" content="NOODP,NOYDIR">
+	--}}
+	<!-- Description -->
+	<meta name="author" content="{{ default.author }}">
+	<meta name="keywords" content="{{ default.keywords }}">
+	<meta name="description" content="{{ default.description }}">
+	<meta itemprop="name" content="{{ title }}">
+	<meta itemprop="description" content="{{ default.description }}">
+	<meta itemprop="image" content="{{ default.image }}">
+	<!-- Canonical -->
+	<link rel="canonical" href="{{ canonical }}">
+	<!-- Title -->
+	<title>{{ title }}</title>
+	<!-- Viewport -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ stylesheet }}">
+</head>
+<body lang="{{ default.locale }}" dir="ltr">
+
+	<main class="main">
+		{{> block 
+		bob = "Hello!"
+		}}
+	</main>
+
+	<script src="{{ script }}" defer></script>
+	<script src="https://www.youtube.com/iframe_api" defer async></script>
+</body>
+
+</html>

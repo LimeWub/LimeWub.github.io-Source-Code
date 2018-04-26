@@ -1,0 +1,18 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Contrail+One');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$contrail-one: 'Contrail One', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+body{
+    font-family: $open-sans;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: $contrail-one;
+}
+
+//Sizes
