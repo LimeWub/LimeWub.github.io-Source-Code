@@ -1,6 +1,6 @@
 {
     "name": "cv",
-    "version": "0",
+    "version": "1.0.0",
     "description": "Compiler/Work setup",
     "main": "gulpfile.js",
     "author": "Myrto Kontouli",

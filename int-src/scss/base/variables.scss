@@ -1,7 +1,7 @@
 // Colors
 $brand1-color: #00b2d6; //Skyscanner
-$brand2-color: #F9E814; //999
-$brand3-color: #D5035E; //EQTR
+$brand2-color: #D5035E; //EQTR
+$brand3-color: #F9E814; //999
 $brand4-color: #FF8E2B; //WebOutreach
 $background-color: #3A3335;
 $text-color: #C4CAD0;
@@ -20,8 +20,10 @@ $medium-space: 60px;
 $small-space: 40px;
 $xsmall-space: 20px;
 
-//Width (Max)
+//Width
 $container-max-width: 1200px;
+$timeline-line-width: 3px;
+$timeline-circle-width: 30px;
 
 //Fonts
 $heading-font: 'Contrail One', sans-serif;
