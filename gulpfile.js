@@ -131,10 +131,8 @@ gulp.task("imagemin", () => {
 gulp.task("hbs", () => {
 	return gulp.src([pkg.paths.src.templates + "**/*.hbs"], { allowEmpty: true })
 	.pipe(_f.plumber({errorHandler: onError}))	
-	.pipe(_f.compileHandlebars({
-			default: require(pkg.paths.src.templates + "default.json"),
-			stylesheet: '/css/' + pkg.vars.siteCssName
-		}
+	.pipe(_f.compileHandlebars(
+		pkg.handlebars.vars
 		,{
             ignorePartials: true,
             batch : [pkg.paths.src.templates + "components/"]
@@ -143,17 +141,24 @@ gulp.task("hbs", () => {
 				path.extname = ".html"
 			})
 		)
-        .pipe(gulp.dest(pkg.paths.dist.templates))
-        .pipe(_f.connect.reload());
+        .pipe(gulp.dest(pkg.paths.build.templates));
 });
 
+//pages
+gulp.task( "pages", gulp.series("hbs",() => {
+	return gulp.src([pkg.paths.build.pages + "**/*.html"], { allowEmpty: true })
+	.pipe(_f.plumber({errorHandler: onError}))	
+    .pipe(gulp.dest(pkg.paths.dist.pages))
+	.pipe(_f.connect.reload());
+}));
+
 // Default task
-gulp.task("default", gulp.series("css", "js", "hbs", () => {
+gulp.task("default", gulp.series("css", "js", "pages", () => {
 	_f.connect.server({
 		root: pkg.paths.dist.base,
 		livereload: true
 	});
 	gulp.watch(pkg.paths.src.scss + "**/*.scss", gulp.series("css"));
 	gulp.watch(pkg.paths.src.js + "**/*.js", gulp.series("js"));
-	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("hbs"));
+	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("pages"));
 }));

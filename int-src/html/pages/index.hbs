@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!-- <html itemtype="http://schema.org/WebPage" itemscope="" manifest="/manifest.appcache"> -->
-<html itemtype="http://schema.org/WebPage" itemscope="" lang="{{ default.language }}">
+<html itemtype="http://schema.org/WebPage" itemscope="" lang="{{ language }}">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Cache-Control" content="max-age=31622400,public">
 	<!-- Prefetch -->
 	<meta http-equiv="x-dns-prefetch-control" content="on">
-	<link rel="dns-prefetch" href="{{ default.prefetch }}">
+	<link rel="dns-prefetch" href="{{ prefetch }}">
 	<!-- Preload -->
 	<link rel="preload" href="{{ script }}" as="script">
 	<!-- Indexing -->
@@ -17,12 +17,12 @@
 	<meta name="robots" content="NOODP,NOYDIR">
 	--}}
 	<!-- Description -->
-	<meta name="author" content="{{ default.author }}">
-	<meta name="keywords" content="{{ default.keywords }}">
-	<meta name="description" content="{{ default.description }}">
+	<meta name="author" content="{{ author }}">
+	<meta name="keywords" content="{{ keywords }}">
+	<meta name="description" content="{{ description }}">
 	<meta itemprop="name" content="{{ title }}">
-	<meta itemprop="description" content="{{ default.description }}">
-	<meta itemprop="image" content="{{ default.image }}">
+	<meta itemprop="description" content="{{ description }}">
+	<meta itemprop="image" content="{{ image }}">
 	<!-- Canonical -->
 	<link rel="canonical" href="{{ canonical }}">
 	<!-- Title -->
@@ -33,7 +33,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ stylesheet }}">
 </head>
-<body lang="{{ default.locale }}" dir="ltr">
+<body lang="{{ locale }}" dir="ltr">
 
 	<main class="main">
 		{{> block 

@@ -21,6 +21,28 @@
             ]
         ]
     },
+    "handlebars": {
+        "vars": {
+            "prefetch": "",
+            "author": "Nya!",
+            "keywords": "",
+            "description": "",
+            "image": "",
+            "sitename": "CV",
+            "sitetype": "sadness",
+            "locale": "en-GB",
+            "alternate_locale": "en-US",
+            "language": "en",
+            "copyright_url": "",
+            "contact_url": "",
+            "icon": "/favicon-itemprop",
+            "icon_apple": "/icon-apple-favourite.png",
+            "icon_apple_startup": "/icon-apple-webapp.png",
+            "stylesheet": "/css/main.min.css",
+            "script": "/js/main.min.js"
+        },
+        "settings": {}
+    },
     "paths": {
         "src": {
             "base": "./int-src/",
@@ -32,12 +54,14 @@
             "base": "./int-dist/",
             "css": "./int-dist/css/",
             "js": "./int-dist/js/",
-            "templates": "./int-dist/html/"
+            "pages": "./int-dist/html/"
         },
         "build": {
             "base": "./int-build/",
             "css": "./int-build/css/",
-            "js": "./int-build/js/"
+            "js": "./int-build/js/",
+            "templates": "./int-build/html/",
+            "pages": "./int-build/html/pages/"
         },
         "scss": [],
         "templates": "."
@@ -61,40 +85,41 @@
         ]
     },
     "dependencies": {
-        "gulp": "^4.0.0",
-        "normalize.css": "^8.0.0"
+        "animejs": "2.2.0",
+        "gulp": "4.0.0",
+        "normalize.css": "8.0.0"
     },
     "devDependencies": {
-        "babel-core": "^7.0.0-beta.3",
-        "babel-plugin-transform-runtime": "^7.0.0-beta.3",
-        "babel-polyfill": "^7.0.0-beta.3",
-        "babel-preset-env": "^7.0.0-beta.3",
-        "fancy-log": "^1.3.2",
-        "git-rev-sync": "^1.11.1",
-        "gulp-autoprefixer": "^5.0.0",
-        "gulp-babel": "^7.0.1",
-        "gulp-cached": "^1.1.1",
-        "gulp-compile-handlebars": "^0.6.1",
-        "gulp-concat": "^2.6.1",
-        "gulp-connect": "^5.5.0",
-        "gulp-cssnano": "^2.1.3",
-        "gulp-filter": "^5.1.0",
-        "gulp-header": "^2.0.5",
-        "gulp-if": "^2.0.2",
-        "gulp-livereload": "^3.8.1",
-        "gulp-load-plugins": "^1.5.0",
-        "gulp-newer": "^1.4.0",
-        "gulp-plumber": "^1.2.0",
-        "gulp-print": "^5.0.0",
-        "gulp-rename": "^1.2.2",
-        "gulp-rev": "^8.1.1",
-        "gulp-sass": "^4.0.1",
-        "gulp-sass-glob": "^1.0.9",
-        "gulp-size": "^3.0.0",
-        "gulp-sourcemaps": "^2.6.4",
-        "gulp-uglify": "^3.0.0",
-        "gulp-webpack": "^1.5.0",
-        "moment": "^2.22.1"
+        "babel-core": "7.0.0-beta.3",
+        "babel-plugin-transform-runtime": "7.0.0-beta.3",
+        "babel-polyfill": "7.0.0-beta.3",
+        "babel-preset-env": "7.0.0-beta.3",
+        "fancy-log": "1.3.2",
+        "git-rev-sync": "1.11.1",
+        "gulp-autoprefixer": "5.0.0",
+        "gulp-babel": "7.0.1",
+        "gulp-cached": "1.1.1",
+        "gulp-compile-handlebars": "0.6.1",
+        "gulp-concat": "2.6.1",
+        "gulp-connect": "5.5.0",
+        "gulp-cssnano": "2.1.3",
+        "gulp-filter": "5.1.0",
+        "gulp-header": "2.0.5",
+        "gulp-if": "2.0.2",
+        "gulp-livereload": "3.8.1",
+        "gulp-load-plugins": "1.5.0",
+        "gulp-newer": "1.4.0",
+        "gulp-plumber": "1.2.0",
+        "gulp-print": "5.0.0",
+        "gulp-rename": "1.2.2",
+        "gulp-rev": "8.1.1",
+        "gulp-sass": "4.0.1",
+        "gulp-sass-glob": "1.0.9",
+        "gulp-size": "3.0.0",
+        "gulp-sourcemaps": "2.6.4",
+        "gulp-uglify": "3.0.0",
+        "gulp-webpack": "1.5.0",
+        "moment": "2.22.1"
     },
     "scripts": {
         "start": "gulp"
