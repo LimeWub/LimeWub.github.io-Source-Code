@@ -1,0 +1,22 @@
+//Section Paddings
+
+.section{
+    padding: $small-space $xsmall-space;
+
+    @media (min-width: $small-mobile) {
+        padding: $medium-space $xsmall-space;
+    }
+    @media (min-width: $small-tablet) {
+        padding: $medium-space $small-space;
+    }
+    @media (min-width: $small-desktop) {
+        padding: $large-space $medium-space;
+    }
+}
+
+.container{
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+//Sizes

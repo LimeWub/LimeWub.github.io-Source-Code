@@ -30,15 +30,20 @@
 	<!-- Viewport -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ stylesheet }}">
 </head>
 <body lang="{{ locale }}" dir="ltr">
 
 	<main class="main">
-		{{> block 
+		{{> header }}
+		{{> timeline-item 
 		bob = "Hello!"
 		}}
+		{{> footer }}
 	</main>
 
 	<script src="{{ script }}" defer></script>

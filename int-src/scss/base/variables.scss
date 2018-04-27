@@ -1,5 +1,31 @@
 // Colors
+$brand1-color: #00b2d6; //Skyscanner
+$brand2-color: #F9E814; //999
+$brand3-color: #D5035E; //EQTR
+$brand4-color: #FF8E2B; //WebOutreach
+$background-color: #3A3335;
+$text-color: #C4CAD0;
 
 // Breakpoints
+$small-mobile: 360px; //mobile
+$large-mobile: 480px;
+$small-tablet: 600px; //tablet
+$large-tablet: 840px;
+$small-desktop: 960px; //desktop
+$large-desktop: 1280px;
 
 // Spacings
+$large-space: 100px;
+$medium-space: 60px;
+$small-space: 40px;
+$xsmall-space: 20px;
+
+//Width (Max)
+$container-max-width: 1200px;
+
+//Fonts
+$heading-font: 'Contrail One', sans-serif;
+$regular-font: 'Open Sans', sans-serif;
+$small-font-size: 14px;
+$medium-font-size: 16px;
+$large-font-size: 18px;
