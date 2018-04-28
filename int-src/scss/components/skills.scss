@@ -1,0 +1,44 @@
+// Component Variables
+$skill-colors: (
+    "default": #8d8791, //has to be first
+    "markup": #e34c26,
+    "styles": #563d7c,
+    "script": #f1e05a,
+    "build": #D5035E,
+    "backend": #4F5D95
+    
+);
+$skill-tag-padding: 5px;
+$skill-tag-border-radius: 5px;
+$skill-tag-margin: 3px 0 3px 3px;
+$skill-tag-font-size: 13px;
+
+
+// Rules
+.skill-tags{
+}
+
+.skill-tag{
+    color: white;
+    display: inline-block;
+    padding: $skill-tag-padding;
+    margin: $skill-tag-margin;
+    border-radius: $skill-tag-border-radius;
+    border: 1px solid;
+    font-size: $skill-tag-font-size;
+}
+
+@each $skill-type, $skill-color in $skill-colors {
+    @if $skill-type == 'default' { 
+        .skill-tag{
+            background: rgba($skill-color, 0.2);
+            border-color: mix(white,$skill-color, 60%);
+        }
+    } @else {
+        .skill-tag--#{$skill-type}{
+            background: rgba($skill-color, 0.2);
+            border-color: mix(white,$skill-color, 60%);
+        }
+    }
+    
+}

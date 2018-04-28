@@ -1,4 +1,41 @@
-<li class="timeline-item">
-    <h2 class="h4">{{ title }}</h2>
-    <p>Timeline description description description description description description description description</p>
+<li class="timeline-item {{modifiers}}">
+    <div class="timeline-item__container">
+
+        <div class="timeline-item__head">
+            <div class="timeline-item__period">
+                <time {{#if startdate-dt}} datetime="{{ startdate-dt }}" {{/if}}>
+                {{ startdate }}
+                </time>
+                - 
+                {{#if enddate}}
+                <time {{#if enddate-dt}} datetime="{{ enddate-dt }}" {{/if}}>
+                    {{ enddate }}
+                </time>
+                {{else}}
+                Current
+                {{/if}}
+            </div>
+            <h2 class="h4 timeline-item__title">{{ title }}</h2> 
+            <h3 class="timeline-item__subtitle">{{ subtitle }}</h3>
+            
+        </div>
+
+        {{#if skills}}
+        <div class="timeline-item__skills">
+            {{{ skills }}}
+        </div>
+        {{/if}}
+
+        <div class="timeline-item__description">
+            {{{ description }}}
+        </div> 
+
+        {{#if highlights}}
+        <div class="timeline-item__highlights">
+            <h2 class="h5 timeline-item__highlights-heading">Highlights</h2>
+            {{{ highlights }}}
+        </div>
+        {{/if}}
+    
+    </div>
 </li>

@@ -1,18 +1,57 @@
 <section>
     <h1 class="h2">Work</h1>
     <div class="container">
-        <ul>
+        <ul class="timeline__list">
             {{> timeline-item 
-                title = "Equator Digital Agency"
-                modifiers = ""
+                title = "Interface Developer"
+                subtitle = "Equator Digital Agency"
+                startdate = "Feb 2018"
+                modifiers = "timeline-item--brand2"
+                skills = "
+                <ul class='skill-tags'>
+                    <li class='skill-tag skill-tag--markup'>HTML5 (Handlebars)</li>
+                    <li class='skill-tag skill-tag--styles'>CSS3 (Sass, BEM)</li>
+                    <li class='skill-tag skill-tag--script'>JavaScript (OOJS, ES6, JSDocs)</li>
+                    <li class='skill-tag skill-tag--build'>Build Tools (Gulp, Grunt)</li>
+                    <li class='skill-tag skill-tag--backend'>Test</li>
+                    <li class='skill-tag'>Test</li>
+                </ul>
+                "
+                description = "
+                <p>
+                Seconded, through 999 Design, to assist one of the company’s tribes with a new front-end build and support tasks.
+                </p>
+                "
+                highlights = "
+                <ul>
+                    <li>Participated in the development of a greenfield front-end solution:
+                        <ul>
+                            <li>Worked in a team of 4 developers, delivering in sprints</li>
+                            <li>Followed a modular, component based approach using <span class='highlight'>BEM</span></li>
+                            <li>Each component built to high accessibility standards and to the specified brand guidelines</li>
+                            <li>Extended and integrated with Equator’s bespoke, in-house JavaScript library, using the prototypal inheritance model</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Assisted with supporting a number of legacy solutions for Equator’s clients, from scoping to execution, using a variety of different front-end technologies.
+                    </li>
+                    <li>
+                        Built an array of responsive emailers for company clients.
+                    </li>
+                </ul>
+                "
             }}
             {{> timeline-item 
                 title = "999 Design"
-                modifiers = ""
+                startdate = "Feb 2018"
+                modifiers = "timeline-item--brand3"
             }}
             {{> timeline-item 
                 title = "WebOutreach"
-                modifiers = ""
+                modifiers = "timeline-item--brand4"
+            }}
+            {{> timeline-item 
+                title = "123"
             }}
         </ul> 
     </div>
