@@ -1,6 +1,6 @@
-<section>
-    <h1 class="h2">Work</h1>
+<section class="section timeline timeline--work">
     <div class="container">
+        <h1 class="h2">Work</h1>
         <ul class="timeline__list">
             {{> timeline-item 
                 title = "Interface Developer"
@@ -13,8 +13,6 @@
                     <li class='skill-tag skill-tag--styles'>CSS3 (Sass, BEM)</li>
                     <li class='skill-tag skill-tag--script'>JavaScript (OOJS, ES6, JSDocs)</li>
                     <li class='skill-tag skill-tag--build'>Build Tools (Gulp, Grunt)</li>
-                    <li class='skill-tag skill-tag--backend'>Test</li>
-                    <li class='skill-tag'>Test</li>
                 </ul>
                 "
                 description = "
@@ -42,17 +40,73 @@
                 "
             }}
             {{> timeline-item 
-                title = "999 Design"
-                startdate = "Feb 2018"
+                title = "Digital Developer"
+                subtitle = "999 Design"
+                startdate = "Nov 2016"
                 modifiers = "timeline-item--brand3"
+                skills = "
+                <ul class='skill-tags'>
+                    <li class='skill-tag skill-tag--markup'>HTML5</li>
+                    <li class='skill-tag skill-tag--styles'>CSS3 (Sass, BEM)</li>
+                    <li class='skill-tag skill-tag--script'>JavaScript (jQuery)</li>
+                    <li class='skill-tag skill-tag--backend'>LAMP (PHP7)</li>
+                    <li class='skill-tag skill-tag--build'>Build Tools (Gulp)</li>
+                    <li class='skill-tag'>Bash</li>
+                </ul>
+                "
+                description = "
+                <p>
+                    Worked across the full-stack, mainly using PHP and JavaScript, to tackle a wide range of projects and recommend improvements for some of the company processes.
+                </p>
+                "
+                highlights = "
+                <ul>
+                    <li>Led back-end development of a number of feature rich, flexible and easy to use PHP based websites, while collaborating closely with the front-end developers and designers as part of a small team.</li>
+                    <li>Extended company’s CMS of choice, ProcessWire, with custom functionality as per each website’s needs, in a re-usable modular manner. Most notably, for one of our clients, I developed a secure, full member login and dashboard functionality, including an easily customisable form solution, which supported wizard steps, auto-save features, ajax submissions, multiple regex based validations and secure file uploads; a combination of a PHP7 back-end and jQuery/parsley.js front-end.</li>
+                    <li>Tasked with various smaller front-end builds, some of which holding pages for bigger client projects necessitated by tight deadlines, others single pages for larger client websites. These were built to match the exact requirements of their development teams, for integration purposes, and received great feedback and return work as a result.</li>
+                    <li>Handled support for some of our long term clients, responding to tickets and feature requests, discussing requirements, managing expectations and implementing new functionality and API integrations.</li>
+                    <li>Researched and implemented an array of in-house life improvements:
+                        <ul>
+                            <li>Re-structured the company’s main back-up script to be more stable while using significantly less server space</li>
+                            <li>Investigated in regards to the company’s hosting solutions, proposing alternatives to cut down costs while improving performance and security per website
+                            </li>
+                            <li>Created a build process, using gulp, for the development team to use
+                            </li>
+                            <li>Supported the team with using and resolving issues with technologies like Git, apache vhosts and dnsmasq
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                "
             }}
             {{> timeline-item 
-                title = "WebOutreach"
+                title = "Web Developer"
+                subtitle = "WebOutreach"
+                startdate = "Dec 2014"
+                enddate = "Nov 2016"
                 modifiers = "timeline-item--brand4"
             }}
-            {{> timeline-item 
-                title = "123"
-            }}
+        </ul> 
+    </div>
+</section>
+<section class="section timeline timeline--education">
+    <div class="container">
+        
+        <h1 class="h2">Education</h1>
+        <ul class="timeline__list">
+        {{> timeline-item 
+            title = "Web Application Specialist Apprentice"
+            subtitle = "WebOutreach / Lancaster & Morecambe College"
+            startdate = "Dec 2013"
+            enddate = "Dec 2014"
+            modifiers = "timeline-item--brand4"
+        }}
+        {{> timeline-item 
+            title = "Industrial Management and Technology"
+            subtitle = "University of Piraeus"
+            startdate = "Sep 2011"
+            enddate = "Jun 2013"
+        }}
         </ul> 
     </div>
 </section>

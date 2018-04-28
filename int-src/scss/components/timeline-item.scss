@@ -4,7 +4,7 @@ $timeline-circle-width: 30px;
 $timeline-circle-space-top: 30px;
 $timeline-item-padding: $small-space;
 $timeline-item-description-padding: $xsmall-space;
-$timeline-item-colors: (
+$timeline-item-colors: ( //In order of appearance
     "default": #8d8791, //has to be first
     "brand1": $brand1-color,
     "brand2": $brand2-color,
@@ -19,7 +19,7 @@ $timeline-item-colors: (
     box-sizing: border-box;
     position: relative;
     @media (min-width: $small-desktop) {
-        width: 50%;
+        width: 70%;
     }
 }
 
@@ -80,6 +80,9 @@ $timeline-item-colors: (
     margin-top: $xsmall-space;
     background: rgba($text-color, 0.05);
     padding: $timeline-item-description-padding;
+    @media (min-width: $small-desktop) {
+        margin-top: $small-space;
+    }
    
     ul{
         padding-left: $xsmall-space;
@@ -106,24 +109,44 @@ $timeline-item-colors: (
 
 
 
+//Modifiers
 //Fade style for last item
-.timeline-item{
-    &:last-of-type{
-        .timeline-item__container{
-             &:before{
-                background: linear-gradient(to bottom, 
-                $text-color 70%, transparent 70%,
-                transparent 75%, rgba($text-color, 0.5) 75%, 
-                rgba($text-color, 0.5) 80%, transparent 80%,
-                transparent 85%, rgba($text-color, 0.2) 85%,
-                rgba($text-color, 0.2) 90%, transparent 90%
-                );
+.timeline--work{
+    .timeline-item{
+        &:last-of-type{
+            .timeline-item__container{
+                &:before{
+                    background: linear-gradient(to bottom, 
+                    $brand4-color 70%, transparent 70%,
+                    transparent 75%, rgba($brand4-color, 0.5) 75%, 
+                    rgba($brand4-color, 0.5) 80%, transparent 80%,
+                    transparent 85%, rgba($brand4-color, 0.2) 85%,
+                    rgba($brand4-color, 0.2) 90%, transparent 90%
+                    );
+                }
             }
-        }
-    } 
+        } 
+    }
 }
 
-//Modifiers
+.timeline--education{
+    .timeline-item{
+        &:last-of-type{
+            .timeline-item__container{
+                &:before{
+                    background: linear-gradient(to bottom, 
+                    #8d8791 70%, transparent 70%,
+                    transparent 75%, rgba(#8d8791, 0.5) 75%, 
+                    rgba(#8d8791, 0.5) 80%, transparent 80%,
+                    transparent 85%, rgba(#8d8791, 0.2) 85%,
+                    rgba(#8d8791, 0.2) 90%, transparent 90%
+                    );
+                }
+            }
+        } 
+    }
+}
+
 @each $timeline-item-brand, $timeline-item-color in $timeline-item-colors {
 
     $className: ".timeline-item--#{$timeline-item-brand}";
@@ -136,6 +159,7 @@ $timeline-item-colors: (
     @if ($i+1) > length($timeline-item-colors){
         $i: 0;
     }
+
     //Get the next colorName/color pair, then get the color (index starts from 1)
     $next-timeline-item-color: nth( nth($timeline-item-colors, $i+1), 2); 
 
