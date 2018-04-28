@@ -1,4 +1,8 @@
 // Component Variables
+$skill-tag-padding: 5px;
+$skill-tag-border-radius: 5px;
+$skill-tag-margin: 3px 0 3px 3px;
+$skill-tag-font-size: 13px;
 $skill-colors: (
     "default": #8d8791, //has to be first
     "markup": #e34c26,
@@ -6,12 +10,7 @@ $skill-colors: (
     "script": #f1e05a,
     "build": #D5035E,
     "backend": #4F5D95
-    
 );
-$skill-tag-padding: 5px;
-$skill-tag-border-radius: 5px;
-$skill-tag-margin: 3px 0 3px 3px;
-$skill-tag-font-size: 13px;
 
 
 // Rules
@@ -28,17 +27,16 @@ $skill-tag-font-size: 13px;
     font-size: $skill-tag-font-size;
 }
 
+//Modifiers
 @each $skill-type, $skill-color in $skill-colors {
+
+    $className: ".skill-tag--#{$skill-type}";
     @if $skill-type == 'default' { 
-        .skill-tag{
-            background: rgba($skill-color, 0.2);
-            border-color: mix(white,$skill-color, 60%);
-        }
-    } @else {
-        .skill-tag--#{$skill-type}{
-            background: rgba($skill-color, 0.2);
-            border-color: mix(white,$skill-color, 60%);
-        }
+        $className: ".skill-tag";
     }
-    
+
+    #{$className}{
+        background: rgba($skill-color, 0.2);
+        border-color: mix(white,$skill-color, 60%);
+    }
 }

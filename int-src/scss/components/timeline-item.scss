@@ -4,6 +4,13 @@ $timeline-circle-width: 30px;
 $timeline-circle-space-top: 30px;
 $timeline-item-padding: $small-space;
 $timeline-item-description-padding: $xsmall-space;
+$timeline-item-colors: (
+    "default": #8d8791, //has to be first
+    "brand1": $brand1-color,
+    "brand2": $brand2-color,
+    "brand3": $brand3-color,   
+    "brand4": $brand4-color
+);
 
 // Rules
 .timeline-item{
@@ -64,14 +71,12 @@ $timeline-item-description-padding: $xsmall-space;
 }
 
 .timeline-item__description{
-    border: 1px solid rgba($brand2-color,0.1);
-    background: rgba($brand2-color, 0.05);
     padding: $timeline-item-description-padding;
     margin-top: $xsmall-space;
 }
 
 .timeline-item__highlights{
-    border: 1px solid rgba($brand2-color,0.1);
+    border: 1px solid;
     margin-top: $xsmall-space;
     background: rgba($text-color, 0.05);
     padding: $timeline-item-description-padding;
@@ -119,44 +124,38 @@ $timeline-item-description-padding: $xsmall-space;
 }
 
 //Modifiers
-//This could prolly be a mixin
-.timeline-item--brand1{
-    .timeline-item__container{
-        &:after{
-            border-color: $brand1-color;
-        }
-        &:before{
-            background: linear-gradient(to bottom, $brand1-color 0%, $brand2-color 100%);
-        }
+@each $timeline-item-brand, $timeline-item-color in $timeline-item-colors {
+
+    $className: ".timeline-item--#{$timeline-item-brand}";
+    @if $timeline-item-brand == 'default' { 
+        $className: ".timeline-item";
     }
-}
-.timeline-item--brand2{
-    .timeline-item__container{
-        &:after{
-            border-color: $brand2-color;
-        }
-        &:before{
-            background: linear-gradient(to bottom, $brand2-color 0%, $brand3-color 100%);
-        }
+
+    //Sass madness
+    $i: index($timeline-item-colors, $timeline-item-brand $timeline-item-color);
+    @if ($i+1) > length($timeline-item-colors){
+        $i: 0;
     }
-}
-.timeline-item--brand3{
-    .timeline-item__container{
-        &:after{
-            border-color: $brand3-color;
+    //Get the next colorName/color pair, then get the color (index starts from 1)
+    $next-timeline-item-color: nth( nth($timeline-item-colors, $i+1), 2); 
+
+    #{$className}{
+        .timeline-item__container{
+            &:after{
+                border-color: $timeline-item-color;
+            }
+            &:before{
+                background: linear-gradient(to bottom, $timeline-item-color 0%, $next-timeline-item-color 100%);
+            }
         }
-        &:before{
-            background: linear-gradient(to bottom, $brand3-color 0%, $brand4-color 100%);
+
+        .timeline-item__description{
+            border: 1px solid rgba( $timeline-item-color, 0.1 );
+            background: rgba( $timeline-item-color, 0.05);
         }
-    }
-}
-.timeline-item--brand4{
-    .timeline-item__container{
-        &:after{
-            border-color: $brand4-color;
-        }
-        &:before{
-            background: linear-gradient(to bottom, $brand4-color 0%, $text-color 100%);
+
+        .timeline-item__highlights{
+            border: 1px solid rgba($timeline-item-color, 0.1);
         }
     }
 }
