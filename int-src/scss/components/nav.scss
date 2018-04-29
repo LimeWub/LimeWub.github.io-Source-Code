@@ -24,6 +24,8 @@
         color: $brand2-color;
         font-weight: 700;
     }
+
+
 }
 
 .nav__link{
@@ -31,8 +33,24 @@
     text-decoration: none;
     color: $background-color;
     padding: 0 0.5rem;
-    border-bottom: 3px solid transparent;
+    position: relative;
+    z-index: 1;
+
+    &:before{
+        content: '';
+        position: absolute;
+        height: 0px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, $brand1-color 50%, $brand2-color 50%);
+        transition: height 0.15s ease-in-out;
+        z-index: -1;
+    }
+
     &:hover, &:focus{
-        border-bottom: 3px solid $brand2-color;
+        &:before{
+            height: 0.5rem;
+        }
     }
 }

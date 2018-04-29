@@ -2,6 +2,7 @@
 $timeline-line-width: 3px;
 $timeline-circle-width: 30px;
 $timeline-circle-space-top: 30px;
+$timeline-item-padding-small: $xsmall-space 0;
 $timeline-item-padding: $small-space;
 $timeline-item-description-padding: $xsmall-space;
 $timeline-item-colors: ( //In order of appearance
@@ -14,12 +15,15 @@ $timeline-item-colors: ( //In order of appearance
 
 // Rules
 .timeline-item{
-    padding: $timeline-item-padding;
+    padding: $timeline-item-padding-small;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     @media (min-width: $small-desktop) {
-        width: 70%;
+        width: 50%;
+        margin-left: 50%;
+        padding-left:0;
+        padding: $timeline-item-padding 0;
     }
 }
 
@@ -76,7 +80,8 @@ $timeline-item-colors: ( //In order of appearance
     margin-top: $xsmall-space;
 }
 
-.timeline-item__highlights{
+.timeline-item__highlights,
+.timeline-item__awards{
     border: 1px solid;
     margin-top: $xsmall-space;
     background: rgba($text-color, 0.05);
@@ -102,7 +107,8 @@ $timeline-item-colors: ( //In order of appearance
     }
 }
 
-.timeline-item__highlights-heading{
+.timeline-item__highlights-heading,
+.timeline-item__awards-heading{
     margin-top: -2.2rem;
 }
 
@@ -111,6 +117,33 @@ $timeline-item-colors: ( //In order of appearance
 
 
 //Modifiers
+.timeline-item--flipped{
+    @media (min-width: $small-desktop) {
+        margin-left: 0;
+        padding-right:0;
+
+        .timeline-item__container{
+            position: relative;
+            margin-right: $timeline-circle-width;
+            margin-left:0;
+            //Circle
+            &:after{
+                position: absolute;
+                left: auto;
+                right: -$timeline-circle-width*1.5 - $timeline-line-width/2;
+                top:  $timeline-circle-space-top; 
+            }
+        
+            //Line
+            &:before{
+                left: auto;
+                right: -$timeline-circle-width - $timeline-line-width;
+                top: $timeline-circle-width + $timeline-circle-space-top;
+            }
+        }
+    }
+}
+
 //Fade style for last item
 .timeline--work{
     .timeline-item{
@@ -181,7 +214,8 @@ $timeline-item-colors: ( //In order of appearance
             background: rgba( $timeline-item-color, 0.05);
         }
 
-        .timeline-item__highlights{
+        .timeline-item__highlights,
+        .timeline-item__awards{
             border: 1px solid rgba($timeline-item-color, 0.1);
         }
     }
