@@ -1,6 +1,33 @@
-.fancy{
+.header{
+    background: rgba($brand1-color, 0.2);
+    padding: $small-space 0;
+    @media (min-width: $small-mobile) {
+        padding: $medium-space 0;
+    }
+}
+.header__container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.header__fancytext-container{
+    box-sizing: border-box;
+    background: $background-color;
+    display: flex;
+    margin: auto;
+}
+
+.header__fancytext{
     font-size: 5rem;
     line-height: 5rem;
-    color: white;
     text-shadow: $brand1-color 0.3rem 0.5rem, $brand2-color -0.2rem -0.3rem;
+    margin: auto;
+    padding: $small-space $small-space/1.5;
+    @media (min-width: $small-mobile) {
+        padding: $medium-space;
+    }
+    @media (min-width: $small-desktop) {
+        padding: $large-space;
+    }
 }

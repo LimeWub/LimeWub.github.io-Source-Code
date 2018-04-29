@@ -5,6 +5,15 @@ $brand3-color: #F9E814; //999
 $brand4-color: #FF8E2B; //WebOutreach
 $background-color: #3A3335;
 $text-color: #C4CAD0;
+$skill-colors: (
+    "default": #8d8791, //has to be first
+    "markup": #e34c26,
+    "styles": #563d7c,
+    "script": #f1e05a,
+    "build": #D5035E,
+    "backend": #4F5D95,
+    "creative": #D41818
+);
 
 // Breakpoints
 $small-mobile: 360px; //mobile

@@ -32,6 +32,7 @@ $timeline-item-colors: ( //In order of appearance
 }
 .timeline-item__subtitle{ //hmmm
     font-size: 1rem;
+    line-height: 1.5rem;
     margin-bottom: 0;
     font-family: $regular-font;
 }
@@ -80,7 +81,7 @@ $timeline-item-colors: ( //In order of appearance
     margin-top: $xsmall-space;
     background: rgba($text-color, 0.05);
     padding: $timeline-item-description-padding;
-    @media (min-width: $small-desktop) {
+    @media (min-width: $small-tablet) {
         margin-top: $small-space;
     }
    
@@ -115,13 +116,14 @@ $timeline-item-colors: ( //In order of appearance
     .timeline-item{
         &:last-of-type{
             .timeline-item__container{
-                &:before{
-                    background: linear-gradient(to bottom, 
-                    $brand4-color 70%, transparent 70%,
-                    transparent 75%, rgba($brand4-color, 0.5) 75%, 
-                    rgba($brand4-color, 0.5) 80%, transparent 80%,
-                    transparent 85%, rgba($brand4-color, 0.2) 85%,
-                    rgba($brand4-color, 0.2) 90%, transparent 90%
+                &:before{ //this can prolly do with padding variables
+                    background: linear-gradient(to top, 
+                    transparent 40px, rgba($brand4-color, 0.2) 40px,
+                    rgba($brand4-color, 0.2) 50px, transparent 50px,
+                    transparent 60px, rgba($brand4-color, 0.5) 60px, 
+                    rgba($brand4-color, 0.5) 70px, transparent 70px,
+                    transparent 80px, $brand4-color 80px,
+                    $brand4-color 100%, transparent 100%
                     );
                 }
             }
@@ -133,13 +135,14 @@ $timeline-item-colors: ( //In order of appearance
     .timeline-item{
         &:last-of-type{
             .timeline-item__container{
-                &:before{
-                    background: linear-gradient(to bottom, 
-                    #8d8791 70%, transparent 70%,
-                    transparent 75%, rgba(#8d8791, 0.5) 75%, 
-                    rgba(#8d8791, 0.5) 80%, transparent 80%,
-                    transparent 85%, rgba(#8d8791, 0.2) 85%,
-                    rgba(#8d8791, 0.2) 90%, transparent 90%
+                &:before{ //this can prolly do with padding variables
+                    background: linear-gradient(to top, 
+                    transparent 40px, rgba(#8d8791, 0.2) 40px,
+                    rgba(#8d8791, 0.2) 50px, transparent 50px,
+                    transparent 60px, rgba(#8d8791, 0.5) 60px, 
+                    rgba(#8d8791, 0.5) 70px, transparent 70px,
+                    transparent 80px, #8d8791 80px,
+                    #8d8791 100%, transparent 100%
                     );
                 }
             }

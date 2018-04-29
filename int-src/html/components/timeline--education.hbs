@@ -1,0 +1,49 @@
+{{!-- Uses timeline.scss styles --}}
+<section class="section timeline timeline--education">
+    <div class="container">
+        
+        <h1 class="h2">Education</h1>
+        <ul class="timeline__list">
+        {{> timeline-item 
+            title = "Web Application Specialist Apprentice"
+            subtitle = "WebOutreach / Lancaster & Morecambe College"
+            startdate = "Dec 2013"
+            enddate = "Dec 2014"
+            modifiers = "timeline-item--brand4"
+            skills = "
+            <ul class='skill-tags'>
+                <li class='skill-tag skill-tag--markup'>HTML5</li>
+                <li class='skill-tag skill-tag--styles'>CSS3</li>
+                <li class='skill-tag skill-tag--script'>JavaScript (jQuery)</li>
+                <li class='skill-tag skill-tag--backend'>LAMP (PHP7, PHPUnit)</li>
+                <li class='skill-tag skill-tag'>Research Tools (ApacheBench, Wireshark)</li>
+            </ul>
+            "
+            description = "
+            <p>
+                Responsible for familiarising myself with various IT principles and applying said knowledge on web development and server management related projects.
+            </p>
+            "
+            awards = "
+            <ul>
+                <li>Level 3 Diploma in IT User Skills</li>
+                <li>ITQ Level 3 for IT users</li>
+                <li>Most Dedicated Apprentice Runner Up 2015</li>
+            </ul>
+            "
+            highlights = "
+            <ul>
+                <li>Introduction to full-stack, object oriented web development through developing an array of dynamic, content managed websites for local companies.</li>
+                <li>Tasked with benchmarking performance and security for some of the company’s hosting and email services and implementing the appropriate changes.</li>
+            </ul>
+            "
+        }}
+        {{> timeline-item 
+            title = "Industrial Management and Technology"
+            subtitle = "University of Piraeus"
+            startdate = "Sep 2011"
+            enddate = "Jun 2013"
+        }}
+        </ul> 
+    </div>
+</section>

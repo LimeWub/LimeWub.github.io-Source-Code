@@ -1,3 +1,4 @@
+{{!-- Uses timeline.scss styles --}}
 <section class="section timeline timeline--work">
     <div class="container">
         <h1 class="h2">Work</h1>
@@ -85,28 +86,30 @@
                 startdate = "Dec 2014"
                 enddate = "Nov 2016"
                 modifiers = "timeline-item--brand4"
+                skills = "
+                <ul class='skill-tags'>
+                    <li class='skill-tag skill-tag--markup'>HTML5</li>
+                    <li class='skill-tag skill-tag--styles'>CSS3</li>
+                    <li class='skill-tag skill-tag--script'>JavaScript (jQuery)</li>
+                    <li class='skill-tag skill-tag--backend'>LAMP (PHP7, PHPUnit)</li>
+                    <li class='skill-tag skill-tag--creative'>Adobe Creative Suite</li>
+                </ul>
+                "
+                description = "
+                <p>
+                    Responsible for working on a range of projects, performing maintenance and liaising with clients, team members and hosting providers to fulfil expectations and resolve issues.
+                </p>
+                "
+                highlights = "
+                <ul>
+                    <li>Participated in discussion with clients and team members to clarify project specifications and developing action plans for carrying them out.</li>
+                    <li>Built full-stack to match the set client specifications and designs; responsive, cross-platform and browser compatible front-ends using Bootstrap, and dynamic, cleanly coded back-ends using MVC CMS like Silverstripe and Magento.</li>
+                    <li>Provided technical support to clients; answering queries on the phone, or via written/video tutorials, handling any technical issues as they’d arise, maintenance, and extending legacy applications’ functionality to match new client needs when required.</li>
+                    <li>Migrated websites and email accounts across hosting providers seamlessly.</li>
+                    <li>Fulfilled image editing tasks, such as cropping, clipping, compressing and designing banners to match their corresponding website’s style.</li>
+                </ul>
+                "
             }}
-        </ul> 
-    </div>
-</section>
-<section class="section timeline timeline--education">
-    <div class="container">
-        
-        <h1 class="h2">Education</h1>
-        <ul class="timeline__list">
-        {{> timeline-item 
-            title = "Web Application Specialist Apprentice"
-            subtitle = "WebOutreach / Lancaster & Morecambe College"
-            startdate = "Dec 2013"
-            enddate = "Dec 2014"
-            modifiers = "timeline-item--brand4"
-        }}
-        {{> timeline-item 
-            title = "Industrial Management and Technology"
-            subtitle = "University of Piraeus"
-            startdate = "Sep 2011"
-            enddate = "Jun 2013"
-        }}
         </ul> 
     </div>
 </section>

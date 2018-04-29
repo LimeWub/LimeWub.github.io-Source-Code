@@ -1,0 +1,38 @@
+.nav{
+    background: white;
+}
+
+.nav__container{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+}
+
+.nav__list{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__item{
+    display: inline-block;
+    font-weight: 500;
+    
+    &:not(:last-of-type):after{
+        content: '//';
+        display: inline-block;
+        color: $brand2-color;
+        font-weight: 700;
+    }
+}
+
+.nav__link{
+    display: inline-block;
+    text-decoration: none;
+    color: $background-color;
+    padding: 0 0.5rem;
+    border-bottom: 3px solid transparent;
+    &:hover, &:focus{
+        border-bottom: 3px solid $brand2-color;
+    }
+}
