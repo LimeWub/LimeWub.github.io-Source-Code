@@ -1,5 +1,6 @@
 {{!-- Uses timeline.scss styles --}}
-<section class="section timeline timeline--education">
+<a name="education"></a> 
+<section class="section timeline timeline--education {{modifiers}}">
     <div class="container">
         
         <h1 class="h2">Education</h1>
@@ -39,6 +40,7 @@
             "
         }}
         {{> timeline-item 
+            modifiers = "timeline-item--flipped"
             title = "Industrial Management and Technology"
             subtitle = "University of Piraeus"
             startdate = "Sep 2011"

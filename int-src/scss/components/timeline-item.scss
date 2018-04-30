@@ -25,6 +25,16 @@ $timeline-item-colors: ( //In order of appearance
         padding-left:0;
         padding: $timeline-item-padding 0;
     }
+
+    &:last-of-type{
+        .timeline-item__container{
+            //Line
+            &:before{
+                height: 100%;
+            }
+        }
+        
+    }
 }
 
 .timeline-item__period{ //hmmm
@@ -151,11 +161,11 @@ $timeline-item-colors: ( //In order of appearance
             .timeline-item__container{
                 &:before{ //this can prolly do with padding variables
                     background: linear-gradient(to top, 
-                    transparent 40px, rgba($brand4-color, 0.2) 40px,
-                    rgba($brand4-color, 0.2) 50px, transparent 50px,
-                    transparent 60px, rgba($brand4-color, 0.5) 60px, 
-                    rgba($brand4-color, 0.5) 70px, transparent 70px,
-                    transparent 80px, $brand4-color 80px,
+                    transparent 0px, rgba($brand4-color, 0.2) 0px,
+                    rgba($brand4-color, 0.2) 10px, transparent 10px,
+                    transparent 20px, rgba($brand4-color, 0.5) 20px, 
+                    rgba($brand4-color, 0.5) 30px, transparent 30px,
+                    transparent 40px, $brand4-color 40px,
                     $brand4-color 100%, transparent 100%
                     );
                 }
@@ -170,11 +180,11 @@ $timeline-item-colors: ( //In order of appearance
             .timeline-item__container{
                 &:before{ //this can prolly do with padding variables
                     background: linear-gradient(to top, 
-                    transparent 40px, rgba(#8d8791, 0.2) 40px,
-                    rgba(#8d8791, 0.2) 50px, transparent 50px,
-                    transparent 60px, rgba(#8d8791, 0.5) 60px, 
-                    rgba(#8d8791, 0.5) 70px, transparent 70px,
-                    transparent 80px, #8d8791 80px,
+                    transparent 0px, rgba(#8d8791, 0.2) 0px,
+                    rgba(#8d8791, 0.2) 10px, transparent 10px,
+                    transparent 20px, rgba(#8d8791, 0.5) 20px, 
+                    rgba(#8d8791, 0.5) 30px, transparent 30px,
+                    transparent 40px, #8d8791 40px,
                     #8d8791 100%, transparent 100%
                     );
                 }

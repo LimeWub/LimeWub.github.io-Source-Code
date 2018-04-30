@@ -1,4 +1,4 @@
-<li class="timeline-item {{modifiers}}">
+<li class="timeline-item {{modifiers}}" data-animate-fade-up="">
     <div class="timeline-item__container">
 
         <div class="timeline-item__head">
@@ -32,6 +32,14 @@
         </div>
         {{/if}} 
 
+{{!--
+        {{#if awards}}
+        <div class="timeline-item__trigger"></div>
+        {{else if highlights}}
+        <div class="timeline-item__trigger"></div>
+        {{/if}}
+ --}}        
+ 
         {{#if awards}}
         <div class="timeline-item__awards">
             <h4 class="h5 timeline-item__awards-heading">Awards</h4>
@@ -45,6 +53,8 @@
             {{{ highlights }}}
         </div>
         {{/if}}
+        
+        
     
     </div>
 </li>

@@ -1,3 +1,22 @@
+$scheme-colors: (
+    "default": #8d8791, //has to be first
+    "brand1": $brand1-color,
+    "brand2": $brand2-color,
+    "brand3": $brand3-color,
+    "brand4": $brand4-color
+);
+
+//base
+html{
+    color: $text-color; //move
+    background: $background-color; //move
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    color: white; //move
+}
+
 .highlight{
     color: white;
     font-weight: 500;
@@ -8,4 +27,35 @@
         text-shadow: $brand1-color 0.1rem 0.1rem, $brand2-color -0.1rem -0.1rem;
     }
     */
+}
+
+
+
+//schemes
+@each $scheme-name, $scheme-color in $scheme-colors {
+
+    $className: ".section--#{$scheme-name}";
+
+    #{$className}{
+
+        &.section--shadow{
+           border-bottom: 0.3rem solid $scheme-color; 
+        }
+
+        h1{
+            position: relative;
+            display: inline-block;
+            
+            &:after{
+                content: '';
+                width: 100%;
+                height: 0.3rem;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, $scheme-color 70%, transparent 70%);
+            }
+        }
+        
+    }
 }

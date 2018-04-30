@@ -1,0 +1,73 @@
+// Component Variables
+$contact-container-max-width: 500px;
+$contact-item-icon-width: 50px;
+$contact-item-icon-space: 20px;
+
+
+// Rules
+.contact{
+    padding: $xsmall-space;
+    background: $background-color;
+    display: flex;
+    flex-direction: row;
+    max-width: $contact-container-max-width;
+    margin: auto;
+}
+
+.contact-item{
+    font-weight: 500;
+}
+.contact-item__icon{
+    width: $contact-item-icon-width;
+    height: $contact-item-icon-width;
+    background: white;
+    display: block;
+    margin-right: $contact-item-icon-space 
+}
+
+.contact-item__text{
+    margin: auto;
+}
+
+.contact-item__link{
+    display: inline-flex;
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    position: relative;
+    height: auto;
+
+    &:before{
+        content: '';
+        position: absolute;
+        height: 0px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: white;
+        transition: height 0.15s ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover, &:focus{
+        &:before{
+            height: 0.2rem;
+        }
+    }
+}
+
+//Modifiers
+.contact--vertical{
+    flex-direction: column;
+}
+.contact-item--vertical{
+    margin: auto;
+
+    .contact-item__link{
+        flex-direction: column;
+    }
+    .contact-item__icon{
+        margin: auto;
+        margin-bottom: $contact-item-icon-space 
+    }   
+}

@@ -1,5 +1,30 @@
-<footer class="section">
+<a name="footer"></a> 
+<footer class="section footer {{modifiers}}">
     <div class="container">
-        Contact details here
+       <ul class="contact contact--vertical">
+            {{> contact-item 
+                modifiers = ""
+                icon = ""
+                text = "text placeholder"
+            }}
+             {{> contact-item 
+                modifiers = ""
+                icon = ""
+                text = "text placeholder"
+            }}
+        </ul>
+        <ul class="contact">
+            {{> contact-item 
+                modifiers = "contact-item--vertical"
+                icon = ""
+                text = "text placeholder"
+            }}
+            {{> contact-item 
+                modifiers = "contact-item--vertical"
+                icon = ""
+                text = "text placeholder"
+            }}
+        </ul>
+
     </div>
 </footer>

@@ -2,17 +2,25 @@
 
 // Rules
 .usp{
-    
+    background: $background-color;
+}
+
+.usp__list{
+    background: $background-color;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 0 -15px;
 }
 
 //Modifiers
 
 .usp--skills{
-    background: rgba($brand2-color, 0.2);
+//    background: rgba($brand2-color, 0.2);
 }
 .usp--self-study{
-    background: rgba($brand3-color, 0.2);
+//    background: rgba($brand3-color, 0.2);
 }
 .usp--interests{
-    background: rgba($brand4-color, 0.2);
+//    background: rgba($brand4-color, 0.2);
 }

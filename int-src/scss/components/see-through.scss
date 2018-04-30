@@ -1,0 +1,15 @@
+// Component Variables
+
+// Rules
+.see-through{
+    height: $small-space;
+
+    @media (min-width: $small-mobile) {
+        height: $medium-space;
+    }
+    @media (min-width: $small-tablet) {
+        height: $large-space;
+    }
+}
+
+//Modifiers

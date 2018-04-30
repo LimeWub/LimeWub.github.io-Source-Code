@@ -4,6 +4,7 @@
 .skill-item{
     margin: $xsmall-space/2 0;
 }
+
 .skill-item__container{
 }
 
@@ -15,10 +16,7 @@
     overflow: hidden;
     position: relative;
     max-height: 40px;
-    
-    h2{
-        //margin-bottom: 0;
-    }
+    cursor: pointer;
 
     &:after{
         content: '';
@@ -39,7 +37,7 @@
     border: 1px solid;
     border-top: 0;
     padding: $xsmall-space;
-    display: none;
+  //  display: none;
 }
 
 //Modifiers

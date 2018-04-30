@@ -40,7 +40,9 @@
 
 	<main class="main">
 		{{> header }}
-		{{> nav }}
+		{{> nav 
+			modifiers = "nav--sticky"
+		}}
 		{{> text 
 			title = "Personal Statement"
 			text = "
@@ -54,13 +56,26 @@
 			supports and values both its clients and employees would be a great fit for me.
 			</p>
 			"
+			modifiers = "section--brand1 section--shadow"
 		}}
-		{{> skills }}
-		{{!--> usp--skills --}}
-		{{> timeline--work }}
-		{{> timeline--education }}
-		{{> usp--self-study }}
-		{{> usp--interests }}
+		{{> see-through }}
+		{{> skills 
+			modifiers = "section--brand2 section--shadow"
+		}}
+		{{> see-through }}
+		{{> timeline--work 
+			modifiers = "section--brand2"
+		}}
+		{{> timeline--education 
+			modifiers = "section--brand4 section--shadow"
+		}}
+		{{> see-through }}
+		{{> usp--self-study  
+			modifiers = "section--brand4"
+		}}
+		{{> usp--interests 
+			modifiers = "section--default section--shadow"
+		}}
 		{{> footer }}
 	</main>
 
