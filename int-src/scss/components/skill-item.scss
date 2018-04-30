@@ -1,0 +1,66 @@
+// Component Variables
+
+// Rules
+.skill-item{
+    margin: $xsmall-space/2 0;
+}
+.skill-item__container{
+}
+
+.skill-item__title{
+    display: block;
+    width: 100%;
+    border: 1px solid;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    max-height: 40px;
+    
+    h2{
+        //margin-bottom: 0;
+    }
+
+    &:after{
+        content: '';
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 10px;
+        top: 25%;
+        transform: rotate(45deg);
+    }
+}
+
+.skill-item__description{
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid;
+    border-top: 0;
+    padding: $xsmall-space;
+    display: none;
+}
+
+//Modifiers
+@each $skill-type, $skill-color in $skill-colors {
+
+
+    $className: ".skill-item--#{$skill-type}";
+    @if $skill-type == 'default' { 
+        $className: ".skill-item";
+    }
+
+    #{$className}{
+        
+        .skill-item__title{
+            background: rgba($skill-color, 0.7);
+            border-color: mix($background-color,$skill-color, 70%);
+        }
+
+        .skill-item__description{
+            background: rgba($skill-color, 0.1);
+            border-color: mix($background-color,$skill-color, 70%);
+        }
+    }
+}

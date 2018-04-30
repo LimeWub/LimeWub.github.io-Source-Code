@@ -1,0 +1,81 @@
+{{!-- Uses skills.scss styles --}}
+<section class="section skills">
+    <div class="container">
+        <h1 class="h2">Skills</h1>
+
+        <ul class="skills__list">
+           {{> skill-item
+            title = "
+            <h2 class='h6'>HTML5</h2>
+            "
+            description = "
+            <p>Semantic and performant mark-up, experience building accessible components utilising WAI-ARIA, Handlebars templating</p>
+            "
+            percentage ="90%"
+            modifiers = "skill-item--markup"
+           }}
+           
+           {{> skill-item
+            title = "
+            <h2 class='h6'>CSS3</h2>
+            "
+            description = "
+            <p>Sass, modular CSS paradigms (BEM), grid-systems (Bootstrap, Flexbox, CSSGrid), responsive design</p>
+            "
+            percentage ="80%"
+            modifiers = "skill-item--styles"
+           }}
+            {{> skill-item
+            title = "
+            <h2 class='h6'>JavaScript</h2>
+            "
+            description = "
+            <p>Front-end JavaScript (jQuery, OOJS, ES6, JSDocs), experience building modular code for JavaScript applications, interest in SPAs and frameworks (Vue, Nuxt), event-driven/asynchronous programming</p>
+            "
+            percentage ="70%"
+            modifiers = "skill-item--script"
+           }}
+           {{> skill-item
+            title = "
+            <h2 class='h6'>LAMP</h2>
+            "
+            description = "
+            <p>Comfortable with UNIX based systems and the command line, working Apache knowledge, PHP and MySQL expertise, with a good understanding of MVC structures across multiple languages</p>
+            "
+            percentage ="75%"
+            modifiers = "skill-item--backend"
+           }}
+           {{> skill-item
+            title = "
+            <h2 class='h6'>Tools</h2>
+            "
+            description = "
+            <p>Version Control with Git, Package managers (npm/Yarn), Gulp workflow and configuration</p>
+            "
+            percentage ="60%"
+            modifiers = "skill-item--build"
+           }}
+           {{> skill-item
+            title = "
+            <h2 class='h6'>Adobe Creative Suite</h2>
+            "
+            description = "
+            <p>Photoshop, InDesign, Illustrator</p>
+            "
+            percentage ="60%"
+            modifiers = "skill-item--creative"
+           }}
+           {{> skill-item
+            title = "
+            <h2 class='h6'>Other</h2>
+            "
+            description = "
+            <p>Advanced Git, some experience with Docker</p>
+            "
+            percentage ="60%"
+            modifiers = ""
+           }}
+        </ul>
+        
+    </div>
+</section>
