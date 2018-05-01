@@ -36,9 +36,19 @@
     overflow: hidden;
     border: 1px solid;
     border-top: 0;
-    padding: $xsmall-space;
-  //  display: none;
+    max-height: 500px;
+
+    //Accordion Animations
+    transition: max-height 1.2s ease-in-out, visibility 0s ease-in-out;
+    &[aria-hidden="true"]{
+        transition: max-height 1.2s cubic-bezier(0, 1, 0.3, 1), visibility 0s ease-in-out;
+    }
 }
+
+.skill-item__description-container{
+    padding: $xsmall-space;
+}
+
 
 //Modifiers
 @each $skill-type, $skill-color in $skill-colors {
