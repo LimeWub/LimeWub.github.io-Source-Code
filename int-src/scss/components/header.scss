@@ -1,10 +1,15 @@
-.header{
-    background: rgba($brand1-color, 0.2);
-    padding: $small-space 0;
-    @media (min-width: $small-mobile) {
-        padding: $medium-space 0;
-    }
-}
+// Component Variables
+$header-padding-xsmall: $small-space $small-space/1.5;
+$header-padding-small: $medium-space;
+$header-padding-medium: $large-space;
+$header-shadow1-color: $brand1-color;
+$header-shadow2-color: $brand2-color;
+$header-background-color: $background-color;
+
+
+// Rules
+.header{}
+
 .header__container{
     display: flex;
     height: 100%;
@@ -13,7 +18,7 @@
 }
 .header__fancytext-container{
     box-sizing: border-box;
-    background: $background-color;
+    background: $header-background-color;
     display: flex;
     margin: auto;
 }
@@ -21,13 +26,14 @@
 .header__fancytext{
     font-size: 5rem;
     line-height: 5rem;
-    text-shadow: $brand1-color 0.3rem 0.5rem, $brand2-color -0.2rem -0.3rem;
+    text-shadow: $header-shadow1-color 0.3rem 0.5rem, 
+                 $header-shadow2-color -0.2rem -0.3rem;
     margin: auto;
-    padding: $small-space $small-space/1.5;
+    padding: $header-padding-xsmall;
     @media (min-width: $small-mobile) {
-        padding: $medium-space;
+        padding: $header-padding-small;
     }
     @media (min-width: $small-desktop) {
-        padding: $large-space;
+        padding: $header-padding-medium;
     }
 }

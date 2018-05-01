@@ -1,11 +1,18 @@
-.nav{
-    background: white;
-}
+// Component Variables
+$nav-background-color: white;
+$nav-padding: 0.3rem 0.5rem;
+$nav-item-separator: '//';
+$nav-item-separator-color: $brand2-color;
+$nav-item-color: $background-color;
+$nav-item-padding: 0 0.5rem;
+$nav-item-underline-color1: $brand1-color;
+$nav-item-underline-color2: $brand2-color;
 
-.nav__container{
-    margin: 0 auto;
+// Rules
+.nav{
+    background: $nav-background-color;
+    padding: $nav-padding;
     text-align: center;
-    padding: 0.3rem 0.5rem;
 }
 
 .nav__list{
@@ -17,33 +24,32 @@
 .nav__item{
     display: inline-block;
     font-weight: 500;
-    
+
     &:not(:last-of-type):after{
-        content: '//';
         display: inline-block;
-        color: $brand2-color;
+        content: $nav-item-separator;
+        color: $nav-item-separator-color;
         font-weight: 700;
     }
-
-
 }
 
 .nav__link{
     display: inline-block;
     text-decoration: none;
-    color: $background-color;
-    padding: 0 0.5rem;
+    color: $nav-item-color;
+    padding: $nav-item-padding;
     position: relative;
     z-index: 1;
 
-    &:before{
+    &:before{ //Fancy underline
         content: '';
         position: absolute;
         height: 0px;
         width: 100%;
         left: 0;
         bottom: 0;
-        background: linear-gradient(to bottom, $brand1-color 50%, $brand2-color 50%);
+        background: linear-gradient(to bottom,
+        $nav-item-underline-color1 50%, $nav-item-underline-color2 50%);
         transition: height 0.15s ease-in-out;
         z-index: -1;
     }

@@ -1,0 +1,23 @@
+// Component Variables
+$contact-max-width: 500px;
+$contact-padding: $xsmall-space;
+$contact-background: $background-color;
+
+
+// Rules
+.contact{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding: $contact-padding;
+    background: $contact-background;
+    max-width: $contact-max-width;
+    margin: auto;
+    text-align: center;
+}
+
+
+//Modifiers
+.contact--vertical{
+    flex-direction: column;
+}
