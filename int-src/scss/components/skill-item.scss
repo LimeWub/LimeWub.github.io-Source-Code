@@ -1,15 +1,17 @@
 // Component Variables
+//$nav-background-color: white;
+//$nav-border-color: $brand2-color;
+$skill-item-margin: $xsmall-space/2 0;
+$skill-item-description-padding: $xsmall-space;
+
 
 // Rules
 .skill-item{
-    margin: $xsmall-space/2 0;
+    margin: $skill-item-margin;
 
     @media print {
         display: flex;
     }
-}
-
-.skill-item__container{
 }
 
 .skill-item__title{
@@ -19,8 +21,12 @@
     text-align: left;
     overflow: hidden;
     position: relative;
-    max-height: 40px;
     cursor: pointer;
+
+    h1, h2, h3, h4, h5, h6{
+        display: inline-block;
+        margin: 0;
+    }
 
     &:after{
         content: '';
@@ -38,16 +44,12 @@
         border: none;
         width: 20%;
         background: none;
-        max-height: 9999px;
 
         &:after{
             display: none;
         }
 
         h1, h2, h3, h4, h5, h6{
-            display: inline-block;
-            margin-bottom: 0;
-
             &:after{
                 display: inline-block;
                 content: ":";
@@ -76,19 +78,17 @@
 }
 
 .skill-item__description-container{
-    padding: $xsmall-space;
+    padding: $skill-item-description-padding;
 
     @media print {
-        padding: $xsmall-space/4;
+        padding: $skill-item-description-padding/4;
     }
 }
 
-
-
 //Modifiers
 @media not print {
-    @each $skill-type, $skill-color in $skill-colors {
 
+    @each $skill-type, $skill-color in $skill-colors {
 
         $className: ".skill-item--#{$skill-type}";
         @if $skill-type == 'default' { 

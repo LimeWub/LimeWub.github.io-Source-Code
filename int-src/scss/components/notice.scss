@@ -1,5 +1,10 @@
 // Component Variables
-
+$noscript-background-color: $brand1-color;
+$noscript-border-color: $brand2-color;
+$noscript-color: white;
+$print-background-color: white;
+$print-color: $background-color;
+$print-link-color: $brand2-color;
 
 // Rules
 .notice{
@@ -8,13 +13,12 @@
     font-weight: 600;
 }
 
-
 // Modifiers
 .notice--noscript{
-    background: $brand1-color;
-    color: white;
-    border-top: 0.1rem solid $brand2-color;
-    border-bottom: 0.2rem solid $brand2-color;
+    background: $noscript-background-color;
+    color: $noscript-color;
+    border-top: 0.1rem solid $noscript-border-color;
+    border-bottom: 0.2rem solid $noscript-border-color;
 
     @media print {
         display: none !important;
@@ -22,9 +26,9 @@
 }
 
 .notice--print{
+    background: $print-background-color;
+    color: $print-color;
     display: none;
-    background: white;
-    color: $background-color;
 
     @media print {
         display: block;
@@ -32,5 +36,5 @@
 }
 
 .print__link{
-    color: $brand2-color;
+    color: $print-link-color;
 }

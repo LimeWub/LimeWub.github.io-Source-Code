@@ -6,19 +6,11 @@ $header-shadow1-color: $brand1-color;
 $header-shadow2-color: $brand2-color;
 $header-background-color: $background-color;
 
-
 // Rules
-.header{}
-
-.header__container{
+.header{
     display: flex;
-    height: 100%;
     width: 100%;
     overflow: hidden;
-}
-.header__fancytext-container{
-    box-sizing: border-box;
-    display: flex;
 }
 
 .header__fancytext{
@@ -43,7 +35,6 @@ $header-background-color: $background-color;
     @media (min-width: $small-desktop) {
         padding: $header-padding-medium;
     }
-
     @media print {
         padding: $header-padding-xsmall;
         text-shadow: $header-shadow1-color 0.3rem 0.5rem;

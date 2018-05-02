@@ -1,5 +1,6 @@
 // Component Variables
 $nav-background-color: white;
+$nav-border-color: $brand2-color;
 $nav-padding: 0.3rem 0.5rem;
 $nav-item-separator: '//';
 $nav-item-separator-color: $brand2-color;
@@ -13,13 +14,13 @@ $nav-item-underline-color2: $brand2-color;
     background: $nav-background-color;
     padding: $nav-padding;
     text-align: center;
+    
     @media print {
         display: none;
     }
 }
 
 .nav__list{
-    display: inline-block;
     padding: 0;
     margin: 0;
 }
@@ -32,12 +33,11 @@ $nav-item-underline-color2: $brand2-color;
         display: inline-block;
         content: $nav-item-separator;
         color: $nav-item-separator-color;
-        font-weight: 700;
+        font-weight: 800;
     }
 }
 
 .nav__link{
-    display: inline-block;
     text-decoration: none;
     color: $nav-item-color;
     padding: $nav-item-padding;
@@ -71,6 +71,6 @@ $nav-item-underline-color2: $brand2-color;
     left: 0;
     width: 100%;
     z-index: 1;
-    border-top: 0.1rem solid $brand2-color;
-    border-bottom: 0.1rem solid $brand2-color;
+    border-top: 0.1rem solid $nav-border-color;
+    border-bottom: 0.1rem solid $nav-border-color;
 }

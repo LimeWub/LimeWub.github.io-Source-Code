@@ -7,7 +7,6 @@
  */
 document.addEventListener("DOMContentLoaded", function initStickyNav() {
 
-
     // Get stickyNav element
     const stickNavElement = document.querySelector("[data-sticky-nav]")
 

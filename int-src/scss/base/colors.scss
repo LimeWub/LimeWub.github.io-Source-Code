@@ -8,28 +8,25 @@ $scheme-colors: (
 
 //base
 html{
-    color: $text-color; //move
-    background: $background-color; //move
+    color: $text-color;
+    background: $background-color;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
-    color: white; //move
+    color: white;
 }
 
 .highlight{
     color: white;
     font-weight: 500;
-    /*
-    transition:text-shadow ease-in-out 0.15s;
-
-    &:hover{
-        text-shadow: $brand1-color 0.1rem 0.1rem, $brand2-color -0.1rem -0.1rem;
-    }
-    */
 }
 
 
+//Modifiers
+.section--background{
+    background: $background-color;
+}
 
 //schemes
 @each $scheme-name, $scheme-color in $scheme-colors {

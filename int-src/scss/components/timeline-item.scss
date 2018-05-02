@@ -12,6 +12,7 @@ $timeline-item-colors: ( //In order of appearance
     "brand3": $brand3-color,   
     "brand4": $brand4-color
 );
+$timeline-item-section-margin: $xsmall-space;
 
 // Rules
 .timeline-item{
@@ -37,13 +38,11 @@ $timeline-item-colors: ( //In order of appearance
     }
 }
 
-.timeline-item__period{ //hmmm
-    
-}
 .timeline-item__title{
     margin-bottom: 0; 
 
 }
+
 .timeline-item__subtitle{ //hmmm
     font-size: 1rem;
     line-height: 1.5rem;
@@ -88,17 +87,20 @@ $timeline-item-colors: ( //In order of appearance
 
         @media print {
             top: $timeline-circle-width + $timeline-circle-space-top*0.75;
+            background: none !important;
+            border-right: 1px solid $timeline-item-color;
+            height: calc(100% + #{$timeline-item-padding});
         }
     }
 }
 
 .timeline-item__skills{
-    margin-top: $xsmall-space;
+    margin-top: $timeline-item-section-margin;
 }
 
 .timeline-item__description{
     padding: $timeline-item-description-padding;
-    margin-top: $xsmall-space;
+    margin-top: $timeline-item-section-margin;
     @media print {
         padding-left: 0;
         padding-left: 0;
@@ -108,7 +110,7 @@ $timeline-item-colors: ( //In order of appearance
 .timeline-item__highlights,
 .timeline-item__awards{
     border: 1px solid;
-    margin-top: $xsmall-space;
+    margin-top: $timeline-item-section-margin;
     background: rgba($text-color, 0.05);
     padding: $timeline-item-description-padding;
     @media (min-width: $small-tablet) {
@@ -125,6 +127,7 @@ $timeline-item-colors: ( //In order of appearance
 
         ul{
            list-style-type: circle; 
+           
            li{
             margin-top: 0;
             }
@@ -136,10 +139,6 @@ $timeline-item-colors: ( //In order of appearance
 .timeline-item__awards-heading{
     margin-top: -2.2rem;
 }
-
-
-
-
 
 //Modifiers
 .timeline-item--flipped{
@@ -174,7 +173,7 @@ $timeline-item-colors: ( //In order of appearance
     .timeline-item{
         &:last-of-type{
             .timeline-item__container{
-                &:before{ //this can prolly do with padding variables
+                &:before{
                     background: linear-gradient(to top, 
                     transparent 0px, rgba($brand4-color, 0.2) 0px,
                     rgba($brand4-color, 0.2) 10px, transparent 10px,
@@ -242,8 +241,6 @@ $timeline-item-colors: ( //In order of appearance
 
                 @media print {
                     background: none !important;
-                    border-right: 1px solid $timeline-item-color;
-                    height: calc(100% + #{$timeline-item-padding});
                 }
             }
         }
@@ -253,8 +250,8 @@ $timeline-item-colors: ( //In order of appearance
             background: rgba( $timeline-item-color, 0.05);
 
             @media print {
-                background: none !important;
                 border: none;
+                background: none !important;
             }
         }
 

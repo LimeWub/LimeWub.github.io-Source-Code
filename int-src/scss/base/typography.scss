@@ -11,8 +11,6 @@
 
 html{
     font-family: $regular-font;
-    color: $text-color; //move
-    background: $background-color; //move
     font-size: $small-font-size;
     @media (min-width: $small-tablet) {
         font-size: $medium-font-size;
@@ -20,12 +18,12 @@ html{
     @media (min-width: $small-desktop) {
         font-size: $large-font-size;
     }
-    
     @media print {
         font-size: 13px;
         background: none;
     } 
 }
+
 body{
     line-height: 1.5rem;
     @media (min-width: $small-desktop) {
@@ -36,7 +34,6 @@ body{
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
     font-family: $heading-font;
-    color: white; //move
     margin-top: 0;
     margin-bottom: 1.5rem;
 }
@@ -45,22 +42,27 @@ h1, .h1{
     font-size: 3.5rem;
     line-height: 4rem;
 }
+
 h2, .h2{
     font-size: 2.8rem;
     line-height: 3rem;
 }
+
 h3, .h3{
     font-size: 2.3rem;
     line-height: 2.5rem;
 }
+
 h4, .h4{
     font-size: 2rem;
     line-height: 2.3rem;
 }
+
 h5, .h5{
     font-size: 1.8rem;
     line-height: 2rem;
 }
+
 h6, .h6{
     font-size: 1.5rem;
     line-height: 2rem;
@@ -70,9 +72,9 @@ ul{
     padding: 0;
     list-style-type: none;
 }
+
 p{
     @media print {
         margin: 0;
     } 
 }
-

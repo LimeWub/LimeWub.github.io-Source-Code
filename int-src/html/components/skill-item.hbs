@@ -1,11 +1,11 @@
 {{!-- Uses skills.scss styles --}}
 <li class="skill-item {{modifiers}}" data-accordion=""> 
 
-    <button class="skill-item__title" data-accordion-trigger="" aria-controls="{{id}}" style="background-image: linear-gradient(135deg, transparent {{ percentage }}, #3A3335 {{ percentage }})">
+    <button id="{{id}}" class="skill-item__title" data-accordion-trigger="" aria-controls="{{id}}_description" style="background-image: linear-gradient(135deg, transparent {{ percentage }}, #3A3335 {{ percentage }})">
             {{{ title }}}
     </button>
 
-    <div id="{{id}}" class="skill-item__description" data-accordion-description="">
+    <div id="{{id}}_description" class="skill-item__description" data-accordion-description="" aria-labelledby="{{id}}">
         <div class="skill-item__description-container">
             {{{ description }}}
         </div>

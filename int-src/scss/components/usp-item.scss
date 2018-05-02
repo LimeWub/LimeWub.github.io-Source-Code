@@ -19,6 +19,7 @@
         padding: 0;
     }
 }
+
 .usp-item__title{
     @media print {
         border: none;
@@ -38,6 +39,7 @@
         }
     }
 }
+
 .usp-item__container{
     display: flex;
     flex-direction: column;

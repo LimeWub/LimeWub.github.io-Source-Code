@@ -3,7 +3,6 @@ $contact-max-width: 500px;
 $contact-padding: $xsmall-space;
 $contact-background: radial-gradient(rgba($background-color, 0.5) 10%, transparent 80%);
 
-
 // Rules
 .contact{
     box-sizing: border-box;
@@ -19,7 +18,6 @@ $contact-background: radial-gradient(rgba($background-color, 0.5) 10%, transpare
         padding: 0;
     }
 }
-
 
 //Modifiers
 .contact--vertical{

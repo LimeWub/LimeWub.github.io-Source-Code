@@ -3,7 +3,6 @@ $contact-item-icon-width: 50px;
 $contact-item-icon-space: 20px;
 $contact-item-color: white;
 
-
 // Rules
 .contact-item{
     font-weight: 500;
@@ -21,44 +20,39 @@ $contact-item-color: white;
 
 .contact-item__icon{
     display: block;
-    margin-right: $contact-item-icon-space 
-}
+    margin-right: $contact-item-icon-space;
 
-.contact-item__icon i{
-    width: $contact-item-icon-width;
-    color: $contact-item-color;
-    font-size: 2rem;
-    font-family: "fontello";
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-
-    display: inline-block;
-    text-decoration: inherit;
-    text-align: center;
-    /* opacity: .8; */
-
-    /* For safety - reset parent styles, that can break glyph codes*/
-    font-variant: normal;
-    text-transform: none;
-
-
-    /* fix buttons height, for twitter bootstrap */
-    line-height: 1em;
-
-    /* You can be more comfortable with increased icons size */
-    /* font-size: 120%; */
-
-    /* Font smoothing. That was taken from TWBS */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    text-shadow: $brand2-color 0.05rem 0.1rem, 
-                 $brand1-color -0.1rem -0.1rem;
-
-
-    @media print {
-        text-shadow: none;
+    i{
+        width: $contact-item-icon-width;
+        color: $contact-item-color;
+        font-size: 2rem;
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+    
+        display: inline-block;
+        text-decoration: inherit;
+        text-align: center;
+    
+        /* For safety - reset parent styles, that can break glyph codes*/
+        font-variant: normal;
+        text-transform: none;
+    
+        /* fix buttons height, for twitter bootstrap */
+        line-height: 1em;
+    
+        /* Font smoothing. That was taken from TWBS */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    
+        text-shadow: $brand2-color 0.05rem 0.1rem, 
+                     $brand1-color -0.1rem -0.1rem;
+    
+    
+        @media print {
+            text-shadow: none;
+        }
     }
 }
 
@@ -88,8 +82,6 @@ $contact-item-color: white;
         }
     }
 }
-
-
 
 //Modifiers
 .contact-item--vertical{
