@@ -24,6 +24,7 @@
     "handlebars": {
         "vars": {
             "title": "CV // Myrto Kontouli",
+            "canonical": "https://limewub.github.io",
             "prefetch": "",
             "author": "Myrto Kontouli",
             "keywords": "Web Developer, Front-end, Full-stack, Developer, Software, Hire, CV, curriculum vitae, Myrto Kontouli, Glasgow, UK, Scotland",
