@@ -16,6 +16,7 @@
         flex-grow: auto;
         flex-basis: auto;
         flex-shrink: auto;
+        padding: 0;
     }
 }
 .usp-item__title{
@@ -23,10 +24,12 @@
         border: none;
         width: auto;
         background: none;
+        width: 20%;
 
         h1, h2, h3, h4, h5, h6{
             display: inline-block;
             margin-bottom: 0;
+            font-size: 1.5rem;
 
             &:after{
                 display: inline-block;
@@ -41,6 +44,7 @@
 
     @media print {
         flex-direction: row;
+        width: 100%;
     }
 }
 
@@ -50,8 +54,9 @@
     padding: 15px;
 
     @media print {
+        background: none;
         border: none;
-        width: auto;
+        width: 100%;
         max-width: 80%;
         padding: $xsmall-space/4;
     }

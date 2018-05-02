@@ -36,8 +36,9 @@
 
     @media print {
         border: none;
-        width: auto;
+        width: 20%;
         background: none;
+        max-height: 9999px;
 
         &:after{
             display: none;
@@ -70,8 +71,7 @@
 
     @media print {
         border: none;
-        width: auto;
-        max-width: 80%;
+        width: 80%;
     }
 }
 

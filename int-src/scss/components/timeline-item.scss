@@ -67,6 +67,13 @@ $timeline-item-colors: ( //In order of appearance
         position: absolute;
         left: -$timeline-circle-width*1.5 + $timeline-line-width/2;
         top:  $timeline-circle-space-top; 
+
+        @media print {
+            width: $timeline-circle-width*0.75;
+            height: $timeline-circle-width*0.75;
+            left: -$timeline-circle-width*1.25;
+            border: 3px solid;
+        }
     }
 
     //Line
@@ -78,6 +85,10 @@ $timeline-item-colors: ( //In order of appearance
         position: absolute;
         left: -$timeline-circle-width;
         top: $timeline-circle-width + $timeline-circle-space-top;
+
+        @media print {
+            top: $timeline-circle-width + $timeline-circle-space-top*0.75;
+        }
     }
 }
 
@@ -88,6 +99,10 @@ $timeline-item-colors: ( //In order of appearance
 .timeline-item__description{
     padding: $timeline-item-description-padding;
     margin-top: $xsmall-space;
+    @media print {
+        padding-left: 0;
+        padding-left: 0;
+    }
 }
 
 .timeline-item__highlights,

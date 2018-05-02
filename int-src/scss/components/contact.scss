@@ -14,6 +14,10 @@ $contact-background: radial-gradient(rgba($background-color, 0.5) 10%, transpare
     max-width: $contact-max-width;
     margin: auto;
     text-align: center;
+
+    @media print {
+        padding: 0;
+    }
 }
 
 

@@ -39,7 +39,10 @@ h1, h2, h3, h4, h5, h6,
     #{$className}{
 
         &.section--shadow{
-           border-bottom: 0.3rem solid $scheme-color; 
+            border-bottom: 0.3rem solid $scheme-color;  
+            @media print {
+                border-bottom: 0;
+            }          
         }
 
         h1{
