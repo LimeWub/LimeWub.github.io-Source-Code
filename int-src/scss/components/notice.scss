@@ -1,0 +1,26 @@
+// Component Variables
+
+
+// Rules
+.notice{
+    overflow: hidden;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+// Modifiers
+.notice--noscript{
+    background: $brand1-color;
+    color: $brand3-color;
+}
+
+.notice--print{
+    display: none;
+    background: white;
+    color: $background-color;
+}
+
+.print__link{
+    color: $brand2-color;
+}

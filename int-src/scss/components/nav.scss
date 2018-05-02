@@ -68,4 +68,6 @@ $nav-item-underline-color2: $brand2-color;
     left: 0;
     width: 100%;
     z-index: 1;
+    border-top: 0.1rem solid $brand2-color;
+    border-bottom: 0.1rem solid $brand2-color;
 }

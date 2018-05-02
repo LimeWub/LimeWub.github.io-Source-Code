@@ -1,4 +1,6 @@
-[aria-hidden="true"]{
-    max-height: 0px !important;
-    visibility: 0;
+@media not print {
+    [aria-hidden="true"]{
+        max-height: 0px !important;
+        visibility: 0;
+    }
 }

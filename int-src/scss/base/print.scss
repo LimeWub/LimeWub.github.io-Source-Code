@@ -1,4 +1,7 @@
 @media print {
+    .notice--print{
+        display: block;
+    }
     html{
         font-size: 13px;
     }

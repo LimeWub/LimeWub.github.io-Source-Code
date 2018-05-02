@@ -36,12 +36,12 @@
     overflow: hidden;
     border: 1px solid;
     border-top: 0;
-    max-height: 500px;
+    max-height: 1000px;
 
     //Accordion Animations
-    transition: max-height 1.2s ease-in-out, visibility 0s ease-in-out;
+    transition: max-height 0.6s ease-in-out, visibility 0s ease-in-out;
     &[aria-hidden="true"]{
-        transition: max-height 1.2s cubic-bezier(0, 1, 0.3, 1), visibility 0s ease-in-out;
+        transition: max-height 0.6s cubic-bezier(0, 1, 0.3, 1), visibility 0s ease-in-out;
     }
 }
 
