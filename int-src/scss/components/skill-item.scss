@@ -3,6 +3,10 @@
 // Rules
 .skill-item{
     margin: $xsmall-space/2 0;
+
+    @media print {
+        display: flex;
+    }
 }
 
 .skill-item__container{
@@ -29,6 +33,26 @@
         top: 25%;
         transform: rotate(45deg);
     }
+
+    @media print {
+        border: none;
+        width: auto;
+        background: none;
+
+        &:after{
+            display: none;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            display: inline-block;
+            margin-bottom: 0;
+
+            &:after{
+                display: inline-block;
+                content: ":";
+            }
+        }
+    }
 }
 
 .skill-item__description{
@@ -43,32 +67,45 @@
     &[aria-hidden="true"]{
         transition: max-height 0.6s cubic-bezier(0, 1, 0.3, 1), visibility 0s ease-in-out;
     }
+
+    @media print {
+        border: none;
+        width: auto;
+        max-width: 80%;
+    }
 }
 
 .skill-item__description-container{
     padding: $xsmall-space;
+
+    @media print {
+        padding: $xsmall-space/4;
+    }
 }
 
 
+
 //Modifiers
-@each $skill-type, $skill-color in $skill-colors {
+@media not print {
+    @each $skill-type, $skill-color in $skill-colors {
 
 
-    $className: ".skill-item--#{$skill-type}";
-    @if $skill-type == 'default' { 
-        $className: ".skill-item";
-    }
-
-    #{$className}{
-        
-        .skill-item__title{
-            background: rgba($skill-color, 0.7);
-            border-color: mix($background-color,$skill-color, 70%);
+        $className: ".skill-item--#{$skill-type}";
+        @if $skill-type == 'default' { 
+            $className: ".skill-item";
         }
 
-        .skill-item__description{
-            background: rgba($skill-color, 0.1);
-            border-color: mix($background-color,$skill-color, 70%);
+        #{$className}{
+            
+            .skill-item__title{
+                background: rgba($skill-color, 0.7);
+                border-color: mix($background-color,$skill-color, 70%);
+            }
+
+            .skill-item__description{
+                background: rgba($skill-color, 0.1);
+                border-color: mix($background-color,$skill-color, 70%);
+            }
         }
     }
 }

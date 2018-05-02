@@ -12,13 +12,23 @@
 // Modifiers
 .notice--noscript{
     background: $brand1-color;
-    color: $brand3-color;
+    color: white;
+    border-top: 0.1rem solid $brand2-color;
+    border-bottom: 0.2rem solid $brand2-color;
+
+    @media print {
+        display: none !important;
+    }
 }
 
 .notice--print{
     display: none;
     background: white;
     color: $background-color;
+
+    @media print {
+        display: block;
+    }
 }
 
 .print__link{

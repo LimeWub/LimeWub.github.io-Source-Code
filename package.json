@@ -23,13 +23,14 @@
     },
     "handlebars": {
         "vars": {
+            "title": "CV // Myrto Kontouli",
             "prefetch": "",
-            "author": "Nya!",
-            "keywords": "",
-            "description": "",
+            "author": "Myrto Kontouli",
+            "keywords": "Web Developer, Front-end, Full-stack, Developer, Software, Hire, CV, curriculum vitae, Myrto Kontouli, Glasgow, UK, Scotland",
+            "description": "Full-stack web developer located in Glasgow, UK. I like to build well structured, maintainable websites.",
             "image": "",
-            "sitename": "CV",
-            "sitetype": "sadness",
+            "sitename": "Myrto Kontouli",
+            "sitetype": "CV",
             "locale": "en-GB",
             "alternate_locale": "en-US",
             "language": "en",
@@ -48,13 +49,15 @@
             "base": "./int-src/",
             "js": "./int-src/js/",
             "scss": "./int-src/scss/",
-            "templates": "./int-src/html/"
+            "templates": "./int-src/html/",
+            "fonts": "./int-src/font/"
         },
         "dist": {
             "base": "./int-dist/",
             "css": "./int-dist/css/",
             "js": "./int-dist/js/",
-            "pages": "./int-dist/html/"
+            "pages": "./int-dist/html/",
+            "fonts": "./int-dist/font/"
         },
         "build": {
             "base": "./int-build/",
@@ -99,6 +102,7 @@
         "gulp-autoprefixer": "5.0.0",
         "gulp-babel": "7.0.1",
         "gulp-cached": "1.1.1",
+        "gulp-clean": "0.4.0",
         "gulp-compile-handlebars": "0.6.1",
         "gulp-concat": "2.6.1",
         "gulp-connect": "5.5.0",

@@ -168,6 +168,10 @@ $timeline-item-colors: ( //In order of appearance
                     transparent 40px, $brand4-color 40px,
                     $brand4-color 100%, transparent 100%
                     );
+
+                    @media print {
+                        border: none;
+                    }
                 }
             }
         } 
@@ -187,6 +191,10 @@ $timeline-item-colors: ( //In order of appearance
                     transparent 40px, #8d8791 40px,
                     #8d8791 100%, transparent 100%
                     );
+
+                    @media print {
+                        border: none;
+                    }
                 }
             }
         } 
@@ -216,17 +224,32 @@ $timeline-item-colors: ( //In order of appearance
             }
             &:before{
                 background: linear-gradient(to bottom, $timeline-item-color 0%, $next-timeline-item-color 100%);
+
+                @media print {
+                    background: none !important;
+                    border-right: 1px solid $timeline-item-color;
+                    height: calc(100% + #{$timeline-item-padding});
+                }
             }
         }
 
         .timeline-item__description{
             border: 1px solid rgba( $timeline-item-color, 0.1 );
             background: rgba( $timeline-item-color, 0.05);
+
+            @media print {
+                background: none !important;
+                border: none;
+            }
         }
 
         .timeline-item__highlights,
         .timeline-item__awards{
             border: 1px solid rgba($timeline-item-color, 0.1);
+
+            @media print {
+                border: 1px solid $text-color;
+            }
         }
     }
 }

@@ -26,6 +26,12 @@ body{
     @media (min-width: $small-desktop) {
         padding: $large-space $medium-space;
     }
+    
+    @media print {
+        padding-top: $xsmall-space;
+        padding-bottom: $xsmall-space;
+    }
+    
 }
 
 .container{

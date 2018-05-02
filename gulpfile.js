@@ -152,13 +152,27 @@ gulp.task( "pages", gulp.series("hbs",() => {
 	.pipe(_f.connect.reload());
 }));
 
+//fonts
+gulp.task( "fonts", () => {
+	return gulp.src([pkg.paths.src.fonts + '**/*'], { allowEmpty: true })
+	.pipe(_f.plumber({errorHandler: onError}))	
+    .pipe(gulp.dest(pkg.paths.dist.fonts));
+});
+
+//clean up build
+gulp.task( "clean", () => {
+	return gulp.src(pkg.paths.build.base, {read: false})
+	.pipe(_f.plumber({errorHandler: onError}))
+    .pipe(_f.clean());
+});
+
 // Default task
-gulp.task("default", gulp.series("css", "js", "pages", () => {
+gulp.task("default", gulp.series("css", "js", "fonts", "pages", "clean", () => {
 	_f.connect.server({
 		root: pkg.paths.dist.base,
 		livereload: true
 	});
 	gulp.watch(pkg.paths.src.scss + "**/*.scss", gulp.series("css"));
 	gulp.watch(pkg.paths.src.js + "**/*.js", gulp.series("js"));
-	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("pages"));
+	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("pages", "clean"));
 }));

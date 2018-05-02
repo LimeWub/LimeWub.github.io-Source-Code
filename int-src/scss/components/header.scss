@@ -36,4 +36,8 @@ $header-background-color: $background-color;
     @media (min-width: $small-desktop) {
         padding: $header-padding-medium;
     }
+
+    @media print {
+        padding: $header-padding-xsmall;
+    }
 }

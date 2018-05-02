@@ -55,6 +55,11 @@ $contact-item-color: white;
 
     text-shadow: $brand2-color 0.05rem 0.1rem, 
                  $brand1-color -0.1rem -0.1rem;
+
+
+    @media print {
+        text-shadow: none;
+    }
 }
 
 .contact-item__text{

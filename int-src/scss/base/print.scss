@@ -1,67 +1,6 @@
 @media print {
-    .notice--print{
-        display: block;
-    }
-    html{
-        font-size: 13px;
-    }
+
     nav, .see-through {
         display: none;
-    }
-
-    p{
-        margin: 0;
-    }
-
-    .section{
-        padding-top: $xsmall-space;
-        padding-bottom: $xsmall-space;
-    }
-
-    //Skills
-    .skill-item{
-        display: flex;
-    }
-    .skill-item__title{
-        border: none;
-        width: auto;
-        
-        h2{
-            margin-bottom: 0;
-            display: inline-block;
-
-            &:after{
-                display: inline-block;
-                content: ":";
-            }
-        }
-        &:after{
-            display: none;
-        }
-    }
-    .skill-item__description{
-        max-height: 9999px !important;
-        visibility: 1 !important;
-        border: none;
-        width: auto;
-        max-width: 80%;
-    }
-    .skill-item__description-container{
-        padding: 5px;
-    }
-
-    //Timeline
-    .skill-tag{
-        background: $background-color;
-        border: darken($background-color, 10%) solid 1px;
-    }
-
-
-
-
-
-    //Contact
-    .contact-item__icon i{
-        text-shadow: none;
     }
 }

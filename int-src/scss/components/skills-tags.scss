@@ -18,6 +18,7 @@ $skill-tag-font-size: 13px;
     font-size: $skill-tag-font-size;
 }
 
+
 //Modifiers
 @each $skill-type, $skill-color in $skill-colors {
 
@@ -29,5 +30,11 @@ $skill-tag-font-size: 13px;
     #{$className}{
         background: rgba($skill-color, 0.2);
         border-color: mix(white,$skill-color, 60%);
+
+        @media print {
+            border-color: $skill-color;
+            background: none;
+            color: $skill-color;
+        }
     }
 }
