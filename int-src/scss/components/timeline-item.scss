@@ -88,7 +88,6 @@ $timeline-item-section-margin: $xsmall-space;
         @media print {
             top: $timeline-circle-width + $timeline-circle-space-top*0.75;
             background: none !important;
-            border-right: 1px solid $timeline-item-color;
             height: calc(100% + #{$timeline-item-padding});
         }
     }
@@ -241,6 +240,7 @@ $timeline-item-section-margin: $xsmall-space;
 
                 @media print {
                     background: none !important;
+                    border-right: 1px solid $timeline-item-color;
                 }
             }
         }

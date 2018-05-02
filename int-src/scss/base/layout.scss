@@ -19,6 +19,7 @@ body{
 
 //Sizes
 .section{
+    box-sizing: border-box;
     padding: $small-space $xsmall-space;
 
     @media (min-width: $small-mobile) {
