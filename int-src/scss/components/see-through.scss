@@ -10,6 +10,9 @@
     @media (min-width: $small-tablet) {
         height: $large-space;
     }
+    @media print {
+        display: none;
+    }
 }
 
 //Modifiers
