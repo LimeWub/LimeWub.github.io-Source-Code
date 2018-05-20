@@ -38,6 +38,14 @@ $skill-item-description-padding: $xsmall-space;
         right: 10px;
         top: 25%;
         transform: rotate(45deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    //Arrow Animations
+    &[aria-expanded="true"]{
+        &:after{
+            transform: translateY(30%) rotate(-135deg);
+        }
     }
 
     @media print {
