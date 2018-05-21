@@ -61,7 +61,7 @@ function handleInteruption() {
  * @ignore
  * @param {HTMLElement} element - Element to scroll to
  */
-export const scrollToElement = function(element) {
+export const scrollToElement = function(element, offsetY = 0) {
 
     // Check element is valid
     if(typeof(element) !== "object") {
@@ -79,7 +79,7 @@ export const scrollToElement = function(element) {
         if required.
     */
     scrollObject = {
-        y: window.pageYOffset
+        y: window.pageYOffset - offsetY
     };
 
     // Calculate target scroll Position

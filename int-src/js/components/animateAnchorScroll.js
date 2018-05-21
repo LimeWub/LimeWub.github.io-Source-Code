@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
 
     // If elements exist
     if (anchorScrollToElements.length > 0) {
+        
+
+
         // Loop through elements
         anchorScrollToElements.forEach(function (currentItem) {
 
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
             currentItem.addEventListener("click", function (event) {
                 // Prevent default
                 event.preventDefault();
-
+                
                 // Get the href attibute value
                 const target = currentItem.getAttribute("href");
 
@@ -52,7 +55,18 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
 
                 // If target is returned
                 if (targetElement !== false) {
-                    scrollToElement(targetElement);
+
+                    // Is there a sticky nav on this page?
+                    const stickyNav = document.querySelector("[data-sticky-nav]");
+                    if (stickyNav) {
+
+                        // If there is, account for it in the scroll
+                        let offsetY= stickyNav.offsetHeight;
+                        scrollToElement(targetElement,offsetY);
+                    } else {
+                        scrollToElement(targetElement);
+                    }
+
                 }
 
             });
