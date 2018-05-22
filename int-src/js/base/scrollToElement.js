@@ -7,7 +7,7 @@ import anime from "animejs";
 //	Scroll To Element
 //
 //==================================================================================================
-let scrollObject; 
+let scrollObject;
 //==================================================================================================
 // Private Functions
 //==================================================================================================
@@ -23,7 +23,7 @@ function removeEvents() {
     window.removeEventListener("mousewheel", handleInteruption, false);
     window.removeEventListener("mousedown", handleInteruption, false);
 }
- 
+
 /**
  * Function to attach a desired callback to the window
  * @function
@@ -61,10 +61,10 @@ function handleInteruption() {
  * @ignore
  * @param {HTMLElement} element - Element to scroll to
  */
-export const scrollToElement = function(element, offsetY = 0) {
+export const scrollToElement = function (element) {
 
     // Check element is valid
-    if(typeof(element) !== "object") {
+    if (typeof (element) !== "object") {
         console.warn("Warning, Non DOM element passed to scrollToElement");
         return false;
     }
@@ -79,7 +79,7 @@ export const scrollToElement = function(element, offsetY = 0) {
         if required.
     */
     scrollObject = {
-        y: window.pageYOffset - offsetY
+        y: window.pageYOffset
     };
 
     // Calculate target scroll Position
@@ -91,11 +91,11 @@ export const scrollToElement = function(element, offsetY = 0) {
         y: target,
         duration: 1000,
         easing: 'easeInOutCubic',
-        update: function() {
+        update: function () {
             // Update window scroll position
             window.scroll(0, scrollObject.y);
         },
-        complete: function() {
+        complete: function () {
             // Remove interuptions events
             removeEvents();
         }

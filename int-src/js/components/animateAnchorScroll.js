@@ -55,18 +55,7 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
 
                 // If target is returned
                 if (targetElement !== false) {
-
-                    // Is there a sticky nav on this page?
-                    const stickyNav = document.querySelector("[data-sticky-nav]");
-                    if (stickyNav) {
-
-                        // If there is, account for it in the scroll
-                        let offsetY= stickyNav.offsetHeight;
-                        scrollToElement(targetElement,offsetY);
-                    } else {
-                        scrollToElement(targetElement);
-                    }
-
+                    scrollToElement(targetElement);
                 }
 
             });
