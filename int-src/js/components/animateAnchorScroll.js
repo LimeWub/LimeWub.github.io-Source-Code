@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
     // If elements exist
     if (anchorScrollToElements.length > 0) {
         
-
-
         // Loop through elements
         anchorScrollToElements.forEach(function (currentItem) {
 
@@ -53,9 +51,18 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
                 // Retrieve the target element
                 const targetElement = returnElement(target);
 
+                let offset = 0;
+
+                // Get stickNavSpacerElement spacer element
+                const stickNavSpacerElement = document.querySelector("[data-sticky-nav-spacer]"); 
+                if (stickNavSpacerElement) {
+                    offset = parseInt(stickNavSpacerElement.style.height, 10);
+                    console.log(offset);
+                }
+
                 // If target is returned
                 if (targetElement !== false) {
-                    scrollToElement(targetElement);
+                    scrollToElement(targetElement, offset);
                 }
 
             });

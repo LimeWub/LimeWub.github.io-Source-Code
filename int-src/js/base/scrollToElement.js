@@ -61,7 +61,7 @@ function handleInteruption() {
  * @ignore
  * @param {HTMLElement} element - Element to scroll to
  */
-export const scrollToElement = function (element) {
+export const scrollToElement = function (element, offset) {
 
     // Check element is valid
     if (typeof (element) !== "object") {
@@ -83,7 +83,8 @@ export const scrollToElement = function (element) {
     };
 
     // Calculate target scroll Position
-    const target = (elementPosition.top + scrollObject.y);
+    const target = (elementPosition.top + scrollObject.y - offset);
+    console.log(target);
 
     // Animate and scroll to the element
     const animate = anime({
