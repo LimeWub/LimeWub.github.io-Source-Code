@@ -82,9 +82,9 @@ export const scrollToElement = function (element, offset) {
         y: window.pageYOffset
     };
 
+    
     // Calculate target scroll Position
     const target = (elementPosition.top + scrollObject.y - offset);
-    console.log(target);
 
     // Animate and scroll to the element
     const animate = anime({

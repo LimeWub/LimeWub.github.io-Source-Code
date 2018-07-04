@@ -51,19 +51,28 @@ document.addEventListener("DOMContentLoaded", function initScrollToElement() {
                 // Retrieve the target element
                 const targetElement = returnElement(target);
 
+                // If target is returned
+                if (targetElement === false) {
+                    return;
+                }
+
                 let offset = 0;
 
-                // Get stickNavSpacerElement spacer element
-                const stickNavSpacerElement = document.querySelector("[data-sticky-nav-spacer]"); 
-                if (stickNavSpacerElement) {
-                    offset = parseInt(stickNavSpacerElement.style.height, 10);
-                    console.log(offset);
+                // Get stickNavElement
+                const stickNavElement = document.querySelector("[data-sticky-nav]"); 
+
+                // Get the top offset of the scroll to element
+                let targetElementOffset = targetElement.getBoundingClientRect().top + window.scrollY;
+
+                // Will the sticky nav be pos fixed after scrolling?
+                if (stickNavElement && stickNavElement.fixed( Math.ceil(targetElementOffset) )) {
+
+                    // If so, add an offset to our scroll
+                    offset = stickNavElement.clientHeight;
+                    
                 }
 
-                // If target is returned
-                if (targetElement !== false) {
-                    scrollToElement(targetElement, offset);
-                }
+                scrollToElement(targetElement, offset);
 
             });
         });
