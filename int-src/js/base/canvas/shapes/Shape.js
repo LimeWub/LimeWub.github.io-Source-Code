@@ -4,12 +4,13 @@
 class Shape {
     constructor(canvas) {
         this.canvas = canvas;
+
         this.x = Math.floor(Math.random() * this.canvas.width); //random
         this.y = Math.floor(Math.random() * this.canvas.height); //random
         this.r = Math.floor(10 + 5 * Math.random());
         this._step = this.step = 0.2 + Math.random();
         this.direction = 360 * Math.random(); // Move to a random direction
-        
+
         return this;
     }
 

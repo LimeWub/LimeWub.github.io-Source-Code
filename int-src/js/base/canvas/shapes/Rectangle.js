@@ -5,14 +5,13 @@ import Shape from "./Shape";
 
 
 class Rectangle extends Shape {
-    constructor(canvas, options) {
+    constructor(canvas) {
       super(canvas);
 
-      this.canvas = canvas;
-      
-      this.options = options;
-
       this.lineWidth = 6;
+      this.colour = canvas.options.shapes.rectangle.colours[
+                      Math.floor(Math.random() * canvas.options.shapes.rectangle.colours.length)
+                    ];
       this.deg = Math.random() * 180; // Rotation
   
       this.draw = function() {
@@ -24,7 +23,7 @@ class Rectangle extends Shape {
         canvas.ctx.beginPath();
         canvas.ctx.rect(0, 0, this.r / 3, this.r);
         canvas.ctx.lineWidth = this.lineWidth;
-        canvas.ctx.fillStyle = this.options.colour;
+        canvas.ctx.fillStyle = this.colour;
         canvas.ctx.fill();
   
         canvas.ctx.restore(); // Restores the coordinate system back to (0,0)

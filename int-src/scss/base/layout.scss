@@ -1,10 +1,10 @@
 body{
     box-sizing: border-box;
+}
 
-
+.gradient{
     @media not print {
-        &:after{
-            content: '';
+
             position: fixed;
             top: 0;
             bottom: 0;
@@ -13,7 +13,7 @@ body{
             background: radial-gradient($brand1-color, $brand2-color);
             z-index: -1;
             opacity: 0.1;
-        }
+        
     }
 }
 

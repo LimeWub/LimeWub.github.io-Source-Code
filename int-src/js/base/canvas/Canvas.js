@@ -1,11 +1,4 @@
 //==================================================================================================
-//
-//	Canvas element w/ animating particle shapes
-//
-//==================================================================================================
-
-
-//==================================================================================================
 //	Dependencies
 //==================================================================================================
 import Ball from "./shapes/Ball";
@@ -13,41 +6,81 @@ import Rectangle from "./shapes/Rectangle";
 import Pointer from "./Pointer";
 
 
-//==================================================================================================
-//	Constructor
-//==================================================================================================
-
+/**
+ * Animating particle canvas with click/touch functionality
+ * @constructor
+ * @param {HTMLObject} element - The canvas element.
+ * @param {Object} options - The options object used by the canvas (TODO: How do I declare these better?)
+ *
+ * @property {Object} ctx - The canvas context
+ *  shapes
+ * @property {HTMLElement} element - The canvas element passed into the canvas constructor.
+ * @property {Object} options - The options passed into the constructor.
+ * @property {Pointer} pointer - Instance of the pointer from the canvas' view.
+ */
 class Canvas {
-  constructor(element, options) {
- 
+  constructor(element, options = {}) {
+    // Default options
+    const defaultOptions = {
+      colours: ["rgba( 0, 0, 0, 1)"],
+      shapes: {
+        ball: {
+          count: 50,
+          colours: ["#eee", "#777", "#333"]
+        },
+        rectangle: {
+          count: 50,
+          colours: ["#777", "#fff"]
+        }
+      }
+    }
+    // Merge options with defaults
+    options = Object.assign(defaultOptions, options);
+    
+
+    // Set properties
     this.element = element;
-    this.options = options; // Default options??
+    this.options = options;
+    this.colour = this.options.colours[Math.floor(Math.random() * this.options.colours.length)]
     this.pointer = new Pointer;
+    this.isTapped = false;
+    this.ctx = this.element.getContext("2d");
+    this.ctx.imageSmoothingEnabled = true;
 
     this.init();
+    
 
     return this;
   }
 
+  /**
+   * Initialize the canvas.
+   * @memberof Canvas
+   */
   init() {
-    this.ctx = this.element.getContext("2d");
-    this.ctx.imageSmoothingEnabled = true;
-    this.isTapped = false;
     this.size();
-    this.fill(this.options.canvasColour);
+    this.fill(this.colour);
     this.initShapes();
     this.attachEvents();
     requestAnimationFrame(() => this.redraw());
   };
 
-
+  /**
+   * Set the size of the canvas.
+   * @memberof Canvas
+   */
   size() {
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
-    this.element.style.width = window.innerWidth + "px";
-    this.element.style.height = window.innerHeight + "px";
+    this.width = this.element.width = window.innerWidth;
+    this.height = this.element.height = window.innerHeight;
+    this.element.style.width = this.width + "px";
+    this.element.style.height = this.height + "px";
   };
 
+  /**
+   * Function to handle canvas re-initialisation based
+   * on whether the window has been stretched.
+   * @memberof Canvas
+   */
   resize() {
     // Do I want any breakpoints here?
     // Only trigger events if canvas size is now bigger than it were
@@ -57,13 +90,21 @@ class Canvas {
     this.init();
   };
 
+  /**
+   * Fills the canvas with a colour.
+   * @memberof Canvas
+   */
   fill(colour) {
     this.ctx.fillStyle = colour;
     this.ctx.fillRect(0, 0, this.width, this.height);
   };
 
+  /**
+   * Handles and calls the animation redraw loop.
+   * @memberof Canvas
+   */
   redraw() {
-    this.fill(this.options.canvasColour);
+    this.fill(this.colour);
     this.shapes.forEach(function (shape) {
       shape.update();
       shape.draw();
@@ -72,30 +113,33 @@ class Canvas {
   };
 
 
-
+  /**
+   * Initialises the canvas shapes.
+   * @memberof Canvas
+   */
   initShapes() {
     this.shapes = [];
 
     //Balls
-    for (let i = 0; i < 70; i++) {
-      let ballOptions = {};
-      ballOptions.colour = this.options.ballColours[Math.floor(Math.random() * this.options.ballColours.length)]
-      const ball = new Ball(this, ballOptions);
+    for (let i = 0; i < this.options.shapes.ball.count; i++) {
+      const ball = new Ball(this);
       ball.draw();
       this.shapes.push(ball);
     }
 
     //Rectangles
-    for (let i = 0; i < 50; i++) {
-      let rectangleOptions = {};
-      rectangleOptions.colour = this.options.rectColours[Math.floor(Math.random() * this.options.rectColours.length)];
-      const rect = new Rectangle(this, rectangleOptions); 
-      rect.draw();
-      this.shapes.push(rect);
+    for (let i = 0; i < this.options.shapes.rectangle.count; i++) {
+      const rectangle = new Rectangle(this);
+      rectangle.draw();
+      this.shapes.push(rectangle);
     }
   }
 
-
+  /**
+   * Pushes shapes around the canvas based
+   * on the pointer location.
+   * @memberof Canvas
+   */
   pushShapes(e) {
     const pointer = this.pointer;
 
@@ -109,10 +153,11 @@ class Canvas {
     });
   };
 
-
-  //==================================================================================================
-  //	Events
-  //==================================================================================================
+  /**
+   * Attaches events to the canvas
+   * object.
+   * @memberof Canvas
+   */
   attachEvents() {
 
     const element = this;
@@ -134,7 +179,7 @@ class Canvas {
       tapStart,
       function (e) {
         element.isTapped = true;
-        element.pushShapes(e); 
+        element.pushShapes(e);
       },
       false
     );
@@ -162,7 +207,7 @@ class Canvas {
       function () {
         element.resize();
       },
-      false 
+      false
     );
   }
 }

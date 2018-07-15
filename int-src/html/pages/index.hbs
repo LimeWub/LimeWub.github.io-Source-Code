@@ -36,11 +36,12 @@
 	<link rel="stylesheet" href="{{ stylesheet }}">
 </head>
 <body lang="{{ locale }}" dir="ltr">
-<canvas class="particles"> </canvas>
+	<canvas class="particles" style="position: fixed; top: 0; left: 0; z-index:-1;"> </canvas>
+	<div class="gradient"> </div>
+	{{> notice }}
+	{{> header }}
+	{{> nav }}
 	<main class="main">
-		{{> notice }}
-		{{> header }}
-		{{> nav }}
 		{{> text 
 			title = "Personal Statement"
 			text = "
