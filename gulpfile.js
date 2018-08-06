@@ -49,7 +49,7 @@ gulp.task("css", gulp.series("scss", () => {
 	_f.fancyLog("-> Building css");
 	return gulp.src(pkg.globs.distCss, { allowEmpty: true })
 		.pipe(_f.plumber({errorHandler: onError}))
-		.pipe(_f.newer({dest: pkg.paths.dist.css + pkg.vars.siteCssName}))
+//		.pipe(_f.newer({dest: pkg.paths.dist.css + pkg.vars.siteCssName}))
 		.pipe(_f.print.default())
 		.pipe(_f.sourcemaps.init({loadMaps: true}))
 		.pipe(_f.concat(pkg.vars.siteCssName))
@@ -167,12 +167,12 @@ gulp.task( "clean", () => {
 });
 
 // Default task
-gulp.task("default", gulp.series("css", "js", "fonts", "pages", "clean", () => {
+gulp.task("default", gulp.series("css", "js", "fonts", "pages", () => {
 	_f.connect.server({
 		root: pkg.paths.dist.base,
 		livereload: true
 	});
 	gulp.watch(pkg.paths.src.scss + "**/*.scss", gulp.series("css"));
 	gulp.watch(pkg.paths.src.js + "**/*.js", gulp.series("js"));
-	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("pages", "clean"));
+	gulp.watch(pkg.paths.src.templates + "**/*.hbs",gulp.series("pages"));
 }));

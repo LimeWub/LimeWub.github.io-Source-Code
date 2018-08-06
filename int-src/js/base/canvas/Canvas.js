@@ -4,6 +4,7 @@
 import Ball from "./shapes/Ball";
 import Rectangle from "./shapes/Rectangle";
 import Pointer from "./Pointer";
+import { min } from "../../../../node_modules/moment";
 
 
 /**
@@ -35,6 +36,8 @@ class Canvas {
       }
     }
     // Merge options with defaults
+    // TODO: This is not working as object assign doesn't seem to work 
+    // with nested properties (deep merging).
     options = Object.assign(defaultOptions, options);
     
 
@@ -43,12 +46,10 @@ class Canvas {
     this.options = options;
     this.colour = this.options.colours[Math.floor(Math.random() * this.options.colours.length)]
     this.pointer = new Pointer;
-    this.isTapped = false;
-    this.ctx = this.element.getContext("2d");
-    this.ctx.imageSmoothingEnabled = true;
 
     this.init();
     
+    requestAnimationFrame(() => this.redraw());
 
     return this;
   }
@@ -58,11 +59,13 @@ class Canvas {
    * @memberof Canvas
    */
   init() {
+    this.isTapped = false;
+    this.ctx = this.element.getContext("2d");
+    this.ctx.imageSmoothingEnabled = true;
     this.size();
     this.fill(this.colour);
     this.initShapes();
     this.attachEvents();
-    requestAnimationFrame(() => this.redraw());
   };
 
   /**
@@ -72,8 +75,6 @@ class Canvas {
   size() {
     this.width = this.element.width = window.innerWidth;
     this.height = this.element.height = window.innerHeight;
-    this.element.style.width = this.width + "px";
-    this.element.style.height = this.height + "px";
   };
 
   /**
@@ -82,11 +83,12 @@ class Canvas {
    * @memberof Canvas
    */
   resize() {
-    // Do I want any breakpoints here?
-    // Only trigger events if canvas size is now bigger than it were
+    // Only trigger resize if canvas size is now bigger than it were
     if (this.width >= window.innerWidth && this.height >= window.innerHeight) {
       return;
     }
+
+    this.options.shapes.rectangle.count
     this.init();
   };
 
@@ -120,15 +122,29 @@ class Canvas {
   initShapes() {
     this.shapes = [];
 
+    let ballsToDraw = this.options.shapes.ball.count;
+    let rectanglesToDraw = this.options.shapes.rectangle.count;
+
+    // Breakpoints!
+    // Limit ball/rectangles drawn as needed on smaller 
+    // screens to assist with performance bottlenecks
+    if ( window.innerWidth < 600) { // Mobile
+      ballsToDraw = Math.min(ballsToDraw, 15);
+      rectanglesToDraw = Math.min(rectanglesToDraw, 15);
+    } if ( window.innerWidth < 960) { // Tablet
+      ballsToDraw = Math.min(ballsToDraw, 30);
+      rectanglesToDraw = Math.min(rectanglesToDraw, 30);
+    }
+
     //Balls
-    for (let i = 0; i < this.options.shapes.ball.count; i++) {
+    for (let i = 0; i < ballsToDraw; i++) {
       const ball = new Ball(this);
       ball.draw();
       this.shapes.push(ball);
     }
 
     //Rectangles
-    for (let i = 0; i < this.options.shapes.rectangle.count; i++) {
+    for (let i = 0; i < rectanglesToDraw; i++) {
       const rectangle = new Rectangle(this);
       rectangle.draw();
       this.shapes.push(rectangle);
@@ -161,7 +177,6 @@ class Canvas {
   attachEvents() {
 
     const element = this;
-
     const tapStart =
       "ontouchstart" in window || navigator.msMaxTouchPoints
         ? "touchstart"
@@ -174,8 +189,9 @@ class Canvas {
       "ontouchstart" in window || navigator.msMaxTouchPoints
         ? "touchend"
         : "mouseup";
-
-    document.addEventListener(
+    
+    //this.element.addEventListener( // Doesn't work due to z-index
+    window.addEventListener(
       tapStart,
       function (e) {
         element.isTapped = true;
@@ -184,7 +200,7 @@ class Canvas {
       false
     );
 
-    document.addEventListener(
+    window.addEventListener(
       tapMove,
       function (e) {
         if (!element.isTapped) return;
@@ -193,9 +209,9 @@ class Canvas {
       false
     );
 
-    document.addEventListener(
+    window.addEventListener(
       tapEnd,
-      function (e) {
+      function () {
         element.isTapped = false;
       },
       false

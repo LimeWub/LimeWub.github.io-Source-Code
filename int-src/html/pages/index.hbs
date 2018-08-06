@@ -36,8 +36,6 @@
 	<link rel="stylesheet" href="{{ stylesheet }}">
 </head>
 <body lang="{{ locale }}" dir="ltr">
-	<canvas class="particles" style="position: fixed; top: 0; left: 0; z-index:-1;"> </canvas>
-	<div class="gradient"> </div>
 	{{> notice }}
 	{{> header }}
 	{{> nav }}
@@ -76,7 +74,10 @@
 			modifiers = "section--default section--shadow section--background"
 		}}
 		{{> footer }}
+		
 	</main>
+	
+	{{> background }}
 
 	<script src="{{ script }}" defer></script>
 </body>

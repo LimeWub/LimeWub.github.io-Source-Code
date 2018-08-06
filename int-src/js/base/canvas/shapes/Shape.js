@@ -1,6 +1,15 @@
-//==================================================================================================
-//	Shapes
-//==================================================================================================
+/**
+ * Base shape class
+ * @constructor
+ * @param {HTMLObject} canvas - The canvas object.
+ * 
+ * @property {Int} x - x (horizontal) co-ordinate on canvas
+ * @property {Int} y - y (vertical) co-ordinate on canvas
+ * @property {Int} r - radius/width of shape
+ * @property {Int} _step - original step of shape on canvas
+ * @property {Int} step - step of shape on canvas (this changes when I want to speed up the shape)
+ * @property {Int} direction - 1 to 360 degrees random direction of the shape move on the canvas
+ */
 class Shape {
     constructor(canvas) {
         this.canvas = canvas;
@@ -10,7 +19,6 @@ class Shape {
         this.r = Math.floor(10 + 5 * Math.random());
         this._step = this.step = 0.2 + Math.random();
         this.direction = 360 * Math.random(); // Move to a random direction
-
         return this;
     }
 
@@ -20,7 +28,7 @@ class Shape {
         let angleRad = this.direction * (Math.PI / 180); //angle in radians
         this.x = this.x + this.step * Math.cos(angleRad);
         this.y = this.y + this.step * Math.sin(angleRad);
-
+        
         // Slow down step (if accelerated) to match original _step
         if (this._step < this.step) {
             this.step -= this._step / this.step * 0.1;
